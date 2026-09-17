@@ -3,6 +3,7 @@ name: Deploy test-visual to GitHub Pages
 on:
   push:
     branches: [test-visual]
+  workflow_dispatch: {}
 
 permissions:
   contents: read
