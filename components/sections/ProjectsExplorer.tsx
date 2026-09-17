@@ -63,7 +63,7 @@ export default function ProjectsExplorer({
       {visible.length === 0 ? (
         <p className="mt-16 text-center text-[15px] text-muted-soft">{dict.work.empty}</p>
       ) : (
-        <div className="mt-[clamp(22px,2.4vw,34px)] grid gap-[clamp(16px,1.8vw,28px)] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-[clamp(22px,2.4vw,34px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,290px),1fr))] gap-[clamp(16px,1.8vw,28px)]">
           {visible.map((project, i) => (
             <Reveal key={project.id} delay={(i % 6) * 0.05}>
               <ProjectCard project={project} lang={lang} dict={dict} variant="grid" />

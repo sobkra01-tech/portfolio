@@ -12,7 +12,7 @@ export default function StatsBar({ dict }: { dict: Dictionary }) {
 
   return (
     <div className="border-y border-border-soft bg-white">
-      <div className="mx-auto grid max-w-shell grid-cols-2 gap-[clamp(16px,2vw,32px)] px-[clamp(18px,3.9vw,72px)] py-[clamp(20px,2.4vw,34px)] sm:grid-cols-4">
+      <div className="mx-auto grid max-w-shell grid-cols-[repeat(auto-fit,minmax(min(100%,220px),1fr))] gap-[clamp(16px,2vw,32px)] px-[clamp(18px,3.9vw,72px)] py-[clamp(20px,2.4vw,34px)]">
         {stats.map(({ value, label, icon: Icon }) => (
           <div key={label} className="flex items-center gap-[clamp(11px,1.1vw,18px)]">
             <IconBadge size={44}>

@@ -37,7 +37,7 @@ export default function CaseStudyTabs({
       </div>
 
       {active === 0 && (
-        <div className="mt-[clamp(26px,3.2vw,46px)] grid gap-[clamp(28px,4vw,60px)] lg:grid-cols-2">
+        <div className="mt-[clamp(26px,3.2vw,46px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-[clamp(28px,4vw,60px)]">
           <div>
             <div className="flex items-center gap-[10px]">
               <AlertTriangle size={19} strokeWidth={1.7} className="text-ink" />

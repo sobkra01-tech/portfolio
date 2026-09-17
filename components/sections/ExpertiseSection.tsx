@@ -8,7 +8,7 @@ const icons = [User, Database, BarChart3];
 export default function ExpertiseSection({ dict }: { dict: Dictionary }) {
   return (
     <section id="about" className="mx-auto max-w-shell px-[clamp(18px,3.9vw,72px)] pt-[clamp(48px,5.6vw,96px)]">
-      <div className="grid gap-[clamp(30px,4vw,64px)] lg:grid-cols-2">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-[clamp(30px,4vw,64px)]">
         <Reveal>
           <div className="text-[13px] font-semibold tracking-[1.6px] text-signature">
             {dict.about.kicker}
@@ -22,7 +22,7 @@ export default function ExpertiseSection({ dict }: { dict: Dictionary }) {
           <p className="mt-4 text-[clamp(14.5px,1.25vw,18px)] font-semibold">{dict.about.highlight}</p>
         </Reveal>
 
-        <div className="grid gap-[clamp(12px,1.2vw,20px)] sm:grid-cols-3">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,190px),1fr))] gap-[clamp(12px,1.2vw,20px)]">
           {dict.about.capabilities.map((cap, i) => {
             const Icon = icons[i];
             return (

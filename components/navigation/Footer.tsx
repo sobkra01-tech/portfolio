@@ -10,7 +10,7 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
   return (
     <footer className="bg-anthracite text-white">
       <div className="mx-auto max-w-shell px-[clamp(18px,3.9vw,72px)] py-[clamp(48px,5.6vw,92px)] pb-[clamp(28px,3vw,44px)]">
-        <div id="contact" className="grid items-start gap-[clamp(30px,4vw,64px)] sm:grid-cols-2">
+        <div id="contact" className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] items-start gap-[clamp(30px,4vw,64px)]">
           <div>
             <h2 className="max-w-[20ch] text-pretty font-display text-[clamp(26px,3vw,44px)] font-bold leading-[1.12] tracking-[-0.04em]">
               {dict.contact.title}

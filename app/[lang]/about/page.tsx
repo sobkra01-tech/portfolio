@@ -39,7 +39,7 @@ export default async function AboutPage({
         </h1>
       </div>
 
-      <div className="mt-[clamp(24px,3vw,44px)] grid items-start gap-[clamp(28px,4vw,60px)] lg:grid-cols-2">
+      <div className="mt-[clamp(24px,3vw,44px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] items-start gap-[clamp(28px,4vw,60px)]">
         <PortraitPlaceholder />
         <div>
           <p className="max-w-[58ch] text-pretty text-[clamp(14.5px,1.25vw,18px)] leading-[1.7] text-muted">

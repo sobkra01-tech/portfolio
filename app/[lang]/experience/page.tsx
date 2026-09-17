@@ -67,7 +67,7 @@ export default async function ExperiencePage({
         ))}
       </div>
 
-      <div className="mt-[clamp(18px,2.6vw,34px)] grid gap-[clamp(28px,3.4vw,52px)] lg:grid-cols-2">
+      <div className="mt-[clamp(18px,2.6vw,34px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-[clamp(28px,3.4vw,52px)]">
         <div>
           <div className="flex items-center gap-[10px]">
             <GraduationCap size={24} strokeWidth={1.7} />
@@ -120,7 +120,7 @@ export default async function ExperiencePage({
             {dict.experience.skillsTitle}
           </h2>
         </div>
-        <div className="mt-6 grid grid-cols-2 gap-[clamp(16px,2vw,28px)] sm:grid-cols-5">
+        <div className="mt-6 grid grid-cols-[repeat(auto-fit,minmax(min(100%,130px),1fr))] gap-[clamp(16px,2vw,28px)]">
           {skills.map((skill) => (
             <SkillRing key={skill.name[lang]} name={skill.name[lang]} pct={skill.pct} />
           ))}

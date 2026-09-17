@@ -8,7 +8,7 @@ import { LinkButton } from "@/components/ui/Button";
 export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#fdfdff] to-[#eef1f9]">
-      <div className="pointer-events-none absolute inset-y-0 left-[22%] right-[-3%] hidden lg:block">
+      <div className="pointer-events-none absolute inset-y-0 left-[22%] right-[-3%] hidden sm:block">
         <Image
           src="/images/hero-fibers.png"
           alt=""
@@ -63,7 +63,7 @@ export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary })
           </a>
         </div>
 
-        <div className="pointer-events-none absolute right-[16%] top-[8%] hidden w-[clamp(96px,10vw,168px)] rounded-[10px] bg-white p-[clamp(9px,.9vw,15px)] shadow-[0_16px_36px_rgba(11,18,32,.10)] lg:block">
+        <div className="pointer-events-none absolute right-[16%] top-[8%] hidden w-[clamp(96px,10vw,168px)] rounded-[10px] bg-white p-[clamp(9px,.9vw,15px)] shadow-[0_16px_36px_rgba(11,18,32,.10)] min-[900px]:block">
           <div className="flex items-center gap-[5px] text-muted-soft">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9">
               <path d="M4 20V10M10 20V4M16 20v-7M2 20h20" />
@@ -81,7 +81,7 @@ export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary })
           </div>
         </div>
 
-        <div className="pointer-events-none absolute right-[2.5%] top-1/2 hidden h-[clamp(92px,9.4vw,158px)] w-[clamp(92px,9.4vw,158px)] items-center justify-center rounded-[10px] bg-white shadow-[0_16px_36px_rgba(11,18,32,.10)] lg:flex">
+        <div className="pointer-events-none absolute right-[2.5%] top-1/2 hidden h-[clamp(92px,9.4vw,158px)] w-[clamp(92px,9.4vw,158px)] items-center justify-center rounded-[10px] bg-white shadow-[0_16px_36px_rgba(11,18,32,.10)] min-[900px]:flex">
           <div className="flex h-[62%] w-[62%] items-center justify-center rounded-full bg-[conic-gradient(#2158ff_0turn_.6turn,#e8edf9_.6turn_1turn)]">
             <div className="flex h-[70%] w-[70%] items-center justify-center rounded-full bg-white text-[clamp(8px,.78vw,12px)] font-semibold text-muted-soft">
               60%
@@ -89,7 +89,7 @@ export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary })
           </div>
         </div>
 
-        <div className="pointer-events-none absolute bottom-[6%] right-[9%] hidden w-[clamp(104px,11vw,182px)] rounded-[10px] bg-white p-[clamp(9px,.9vw,15px)] shadow-[0_16px_36px_rgba(11,18,32,.10)] lg:block">
+        <div className="pointer-events-none absolute bottom-[6%] right-[9%] hidden w-[clamp(104px,11vw,182px)] rounded-[10px] bg-white p-[clamp(9px,.9vw,15px)] shadow-[0_16px_36px_rgba(11,18,32,.10)] min-[900px]:block">
           <div className="flex items-center gap-[5px] text-muted-soft">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9">
               <path d="m22 7-8.5 8.5-5-5L2 17M16 7h6v6" />

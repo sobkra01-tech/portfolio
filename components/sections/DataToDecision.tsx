@@ -18,7 +18,7 @@ export default function DataToDecision({ lang, dict }: { lang: Locale; dict: Dic
           {dict.process.titleEnd}
         </h2>
 
-        <div className="mt-[clamp(28px,3.4vw,52px)] grid grid-cols-2 gap-[clamp(10px,1.2vw,20px)] sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-[clamp(28px,3.4vw,52px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,140px),1fr))] gap-[clamp(10px,1.2vw,20px)]">
           {dict.process.steps.map((step, i) => {
             const Icon = stepIcons[i];
             return (
@@ -31,7 +31,7 @@ export default function DataToDecision({ lang, dict }: { lang: Locale; dict: Dic
                   <div className="text-[12px] text-white/60">{step.desc}</div>
                 </div>
                 {i < dict.process.steps.length - 1 && (
-                  <div className="mt-5 hidden text-white/20 lg:block">
+                  <div className="mt-5 text-white/20">
                     <ArrowRight size={14} strokeWidth={1.7} />
                   </div>
                 )}
@@ -44,7 +44,7 @@ export default function DataToDecision({ lang, dict }: { lang: Locale; dict: Dic
           {dict.process.lead}
         </p>
 
-        <div className="mt-[clamp(28px,3.4vw,48px)] grid gap-[clamp(12px,1.2vw,20px)] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-[clamp(28px,3.4vw,48px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,230px),1fr))] gap-[clamp(12px,1.2vw,20px)]">
           {dict.process.services.map((service, i) => {
             const Icon = serviceIcons[i];
             return (

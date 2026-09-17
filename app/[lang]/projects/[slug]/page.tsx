@@ -48,7 +48,7 @@ export default async function ProjectDetailPage({
         <span className="font-medium text-ink">{project.title[lang]}</span>
       </nav>
 
-      <div className="mt-[clamp(22px,2.8vw,40px)] grid items-start gap-[clamp(30px,4vw,64px)] lg:grid-cols-2">
+      <div className="mt-[clamp(22px,2.8vw,40px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,380px),1fr))] items-start gap-[clamp(30px,4vw,64px)]">
         <div>
           <div className="flex flex-wrap items-start gap-4">
             <h1 className="max-w-[16ch] font-display text-[clamp(32px,3.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.045em]">
