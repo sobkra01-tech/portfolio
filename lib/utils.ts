@@ -8,3 +8,11 @@ export function localePath(lang: Locale, path: string): string {
   const clean = path === "/" ? "" : path;
   return `/${lang}${clean}`;
 }
+
+/**
+ * next/image doesn't prefix `src` with `basePath` automatically, so static
+ * assets referenced directly (not through the default loader) need this.
+ */
+export function assetPath(path: string): string {
+  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+}

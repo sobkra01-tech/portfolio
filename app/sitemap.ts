@@ -5,6 +5,8 @@ import { projects } from "@/data/projects";
 const base = "https://kra-modeste.vercel.app";
 const routes = ["", "/projects", "/experience", "/about", "/smartdata", "/contact"];
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = locales.flatMap((locale) =>
     routes.map((route) => ({

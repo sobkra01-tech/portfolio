@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowDown, LayoutGrid, Mail } from "lucide-react";
 import type { Locale } from "@/types";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
-import { localePath } from "@/lib/utils";
+import { localePath, assetPath } from "@/lib/utils";
 import { LinkButton } from "@/components/ui/Button";
 
 export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
@@ -10,7 +10,7 @@ export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary })
     <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#fdfdff] to-[#eef1f9]">
       <div className="pointer-events-none absolute inset-y-0 left-[22%] right-[-3%] hidden sm:block">
         <Image
-          src="/images/hero-fibers.png"
+          src={assetPath("/images/hero-fibers.png")}
           alt=""
           fill
           priority
