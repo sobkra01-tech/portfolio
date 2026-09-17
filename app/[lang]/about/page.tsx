@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { User, MapPin, Mail, Clock, Globe } from "lucide-react";
 import { resolveLangParam } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { cn } from "@/lib/utils";
 import { languages } from "@/data/skills";
+import { profile } from "@/data/profile";
 import PortraitPlaceholder from "@/components/cards/PortraitPlaceholder";
 
 export async function generateMetadata({
@@ -24,11 +27,13 @@ export default async function AboutPage({
   const dict = getDictionary(lang);
 
   const facts = [
-    { k: dict.aboutPage.facts.name, v: "Kouakou Kra Modeste", icon: User },
-    { k: dict.aboutPage.facts.location, v: "Côte d'Ivoire", icon: MapPin },
-    { k: dict.aboutPage.facts.email, v: dict.aboutPage.emailPending, icon: Mail },
-    { k: dict.aboutPage.facts.availability, v: dict.aboutPage.availability, icon: Clock }
-  ];
+    { k: dict.aboutPage.facts.name, v: profile.name, icon: User },
+    profile.location ? { k: dict.aboutPage.facts.location, v: profile.location, icon: MapPin } : null,
+    { k: dict.aboutPage.facts.email, v: profile.email ?? dict.aboutPage.emailPending, icon: Mail },
+    profile.availability
+      ? { k: dict.aboutPage.facts.availability, v: profile.availability[lang], icon: Clock }
+      : null
+  ].filter((fact): fact is { k: string; v: string; icon: typeof User } => fact !== null);
 
   return (
     <div className="mx-auto max-w-shell px-[clamp(18px,3.9vw,72px)] py-[clamp(36px,4.4vw,72px)] pb-[clamp(44px,5vw,80px)]">
@@ -40,14 +45,31 @@ export default async function AboutPage({
       </div>
 
       <div className="mt-[clamp(24px,3vw,44px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,300px),1fr))] items-start gap-[clamp(28px,4vw,60px)]">
-        <PortraitPlaceholder dict={dict} />
+        {profile.photo ? (
+          <div className="relative h-[320px] w-full overflow-hidden rounded-2xl sm:h-[460px]">
+            <Image
+              src={profile.photo}
+              alt={profile.name}
+              fill
+              className="object-cover"
+              sizes="(min-width: 640px) 460px, 100vw"
+            />
+          </div>
+        ) : (
+          <PortraitPlaceholder dict={dict} />
+        )}
         <div>
-          <p className="max-w-[58ch] text-pretty text-[clamp(14.5px,1.25vw,18px)] leading-[1.7] text-muted">
-            {dict.aboutPage.bodyOne}
-          </p>
-          <p className="mt-4 max-w-[58ch] text-pretty text-[clamp(14.5px,1.25vw,18px)] leading-[1.7] text-muted">
-            {dict.aboutPage.bodyTwo}
-          </p>
+          {profile.bio.map((paragraph, i) => (
+            <p
+              key={i}
+              className={cn(
+                "max-w-[58ch] text-pretty text-[clamp(14.5px,1.25vw,18px)] leading-[1.7] text-muted",
+                i > 0 && "mt-4"
+              )}
+            >
+              {paragraph[lang]}
+            </p>
+          ))}
 
           <dl className="mt-[26px] flex flex-col">
             {facts.map(({ k, v, icon: Icon }) => (

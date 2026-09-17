@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AlertTriangle, Lightbulb, Target } from "lucide-react";
 import type { Project } from "@/types";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
@@ -84,10 +85,20 @@ export default function CaseStudyTabs({
         </div>
       )}
 
-      {active !== 0 && (
-        <p className="mt-10 max-w-[60ch] text-[14.5px] leading-[1.7] text-muted-soft">
-          {dict.caseStudy.comingSoon}
-        </p>
+      {active === 4 && project.screenshots && project.screenshots.length > 0 ? (
+        <div className="mt-[clamp(26px,3.2vw,46px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-[clamp(16px,2vw,28px)]">
+          {project.screenshots.map((screenshot) => (
+            <div key={screenshot} className="relative h-[180px] overflow-hidden rounded-[12px] border border-border">
+              <Image src={screenshot} alt={project.title[lang]} fill className="object-cover" sizes="260px" />
+            </div>
+          ))}
+        </div>
+      ) : (
+        active !== 0 && (
+          <p className="mt-10 max-w-[60ch] text-[14.5px] leading-[1.7] text-muted-soft">
+            {dict.caseStudy.comingSoon}
+          </p>
+        )
       )}
     </div>
   );

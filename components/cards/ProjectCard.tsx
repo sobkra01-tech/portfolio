@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import type { Locale, Project } from "@/types";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
@@ -28,12 +29,29 @@ export default function ProjectCard({
         className
       )}
     >
-      <ProjectThumb
-        bars={project.bars}
-        icon={project.icon as never}
-        kicker={project.kicker[lang]}
-        className={cn("h-[150px]", variant === "grid" && "rounded-xl")}
-      />
+      {project.image ? (
+        <div
+          className={cn(
+            "relative h-[150px] overflow-hidden rounded-xl",
+            variant === "grid" && "rounded-xl"
+          )}
+        >
+          <Image
+            src={project.image}
+            alt={project.title[lang]}
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          />
+        </div>
+      ) : (
+        <ProjectThumb
+          bars={project.bars}
+          icon={project.icon as never}
+          kicker={project.kicker[lang]}
+          className={cn("h-[150px]", variant === "grid" && "rounded-xl")}
+        />
+      )}
       <div className={cn("flex flex-1 flex-col", variant === "bordered" ? "p-5" : "pt-[14px]")}>
         {variant === "bordered" ? (
           <>

@@ -1,6 +1,5 @@
 const en = {
   meta: {
-    titleSuffix: "Kra Modeste — Data Scientist | Big Data Engineer",
     description:
       "Portfolio of Kouakou Kra Modeste, Data Scientist & Big Data Engineer. Data engineering, machine learning, analytics and business intelligence case studies."
   },
@@ -89,30 +88,7 @@ const en = {
     lead: "SmartData Consulting supports researchers and organizations across the full data journey — from collection to publication-ready analysis.",
     intro: "SmartData Consulting is a dedicated practice helping researchers and institutions get more value and more rigor from their data, without compromising on scientific standards.",
     servicesTitle: "What SmartData Consulting offers",
-    services: [
-      {
-        title: "Data Analysis & Interpretation",
-        desc: "Statistical analysis and interpretation of research data, tailored to the study design and research questions."
-      },
-      {
-        title: "Scientific Writing Support",
-        desc: "Support structuring and writing the analytical sections of academic papers, theses and dissertations."
-      },
-      {
-        title: "Data Analysis Training",
-        desc: "Practical training in statistical software and data analysis methods for researchers and teams."
-      },
-      {
-        title: "Data Collection Training",
-        desc: "Guidance and training on survey design, sampling and data collection tools and methods."
-      }
-    ],
     approachTitle: "Approach",
-    approach: [
-      "Understand the research context, questions and constraints before touching the data.",
-      "Apply rigorous, transparent statistical methods appropriate to the study design.",
-      "Communicate findings clearly, in a form that holds up to academic scrutiny."
-    ],
     statusNote: "SmartData Consulting is currently being built. Details on engagement and availability will be added soon.",
     cta: "Discuss a project"
   },
@@ -120,25 +96,16 @@ const en = {
     title: "My Experience",
     educationTitle: "Education",
     certificationTitle: "Certification",
-    skillsTitle: "Technical Skills",
-    certification: {
-      name: "Data Science",
-      issuer: "DataCamp",
-      type: "Certification",
-      year: "2024"
-    }
+    skillsTitle: "Technical Skills"
   },
   aboutPage: {
     title: "About Me",
-    bodyOne: "I'm a Data Scientist and Big Data Engineer with a strong foundation in statistics and economics. I help organizations harness the power of data to improve performance, optimize operations and make better decisions.",
-    bodyTwo: "My approach combines analytical thinking, engineering skills and business understanding to build solutions that create real impact.",
     facts: {
       name: "Name",
       location: "Location",
       email: "Email",
       availability: "Availability"
     },
-    availability: "Open to new opportunities",
     emailPending: "Will be added soon",
     languagesTitle: "Languages",
     portraitPlaceholder: "Portrait — add public/images/portrait.jpg"
@@ -155,12 +122,7 @@ const en = {
       send: "Send Message",
       sent: "Message Sent"
     },
-    linksTitle: "Elsewhere",
-    linkHandles: {
-      linkedin: "Connect",
-      github: "Follow",
-      facebook: "Connect"
-    }
+    linksTitle: "Elsewhere"
   },
   caseStudy: {
     featured: "FEATURED PROJECT",

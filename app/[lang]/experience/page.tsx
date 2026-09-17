@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Briefcase, Calendar, Building2, GraduationCap, Award, Zap } from "lucide-react";
+import Image from "next/image";
+import { Briefcase, Calendar, Building2, MapPin, GraduationCap, Award, Zap } from "lucide-react";
 import { resolveLangParam } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { experience } from "@/data/experience";
 import { education } from "@/data/education";
+import { certifications } from "@/data/certifications";
 import { skills, techStack } from "@/data/skills";
 import TimelineItem from "@/components/cards/TimelineItem";
 import SkillRing from "@/components/cards/SkillRing";
@@ -50,19 +52,59 @@ export default async function ExperiencePage({
             title={item.role[lang]}
           >
             <div className="mt-[6px] flex items-center gap-[7px] text-muted-soft">
-              <Building2 size={13} strokeWidth={1.8} />
-              <span className="text-[14px] font-semibold tracking-[.6px]">{item.org}</span>
+              {item.logo ? (
+                <Image src={item.logo} alt={item.org} width={16} height={16} className="rounded-[3px]" />
+              ) : (
+                <Building2 size={13} strokeWidth={1.8} />
+              )}
+              <span className="text-[14px] font-semibold tracking-[.6px]">
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    {item.org}
+                  </a>
+                ) : (
+                  item.org
+                )}
+              </span>
+              {item.location && (
+                <span className="flex items-center gap-1 text-[13px] font-normal text-muted-soft">
+                  <MapPin size={12} strokeWidth={1.8} />
+                  {item.location}
+                </span>
+              )}
             </div>
             <p className="mt-[10px] max-w-[74ch] text-pretty text-[clamp(13.5px,1.2vw,17px)] leading-[1.7] text-muted">
               {item.desc[lang]}
             </p>
-            <div className="mt-[14px] flex flex-wrap gap-2">
-              {item.tags.map((tag) => (
-                <span key={tag.en} className="rounded-[5px] bg-surface-tint px-[11px] py-[7px] text-[12.5px] font-medium text-muted">
-                  {tag[lang]}
-                </span>
-              ))}
-            </div>
+            {item.responsibilities && item.responsibilities.length > 0 && (
+              <ul className="mt-[10px] flex flex-col gap-[6px]">
+                {item.responsibilities.map((responsibility, ri) => (
+                  <li key={ri} className="flex gap-2 text-[13.5px] leading-[1.6] text-muted">
+                    <span className="mt-[7px] h-[4px] w-[4px] flex-none rounded-full bg-muted-soft" />
+                    {responsibility[lang]}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {item.achievements && item.achievements.length > 0 && (
+              <ul className="mt-[10px] flex flex-col gap-[6px]">
+                {item.achievements.map((achievement, ai) => (
+                  <li key={ai} className="flex gap-2 text-[13.5px] leading-[1.6] text-signature">
+                    <span className="mt-[7px] h-[4px] w-[4px] flex-none rounded-full bg-signature" />
+                    {achievement[lang]}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {item.tags.length > 0 && (
+              <div className="mt-[14px] flex flex-wrap gap-2">
+                {item.tags.map((tag) => (
+                  <span key={tag.en} className="rounded-[5px] bg-surface-tint px-[11px] py-[7px] text-[12.5px] font-medium text-muted">
+                    {tag[lang]}
+                  </span>
+                ))}
+              </div>
+            )}
           </TimelineItem>
         ))}
       </div>
@@ -96,19 +138,41 @@ export default async function ExperiencePage({
               {dict.experience.certificationTitle}
             </h2>
           </div>
-          <div className="mt-5 flex flex-wrap items-center justify-between gap-5 rounded-[14px] border border-border p-[clamp(18px,1.8vw,26px)]">
-            <div>
-              <div className="font-display text-[clamp(15px,1.3vw,19px)] font-bold tracking-[-0.3px]">
-                {dict.experience.certification.name}
-              </div>
-              <div className="mt-2 text-[13.5px] text-signature">{dict.experience.certification.issuer}</div>
-              <div className="mt-1 text-[13.5px] text-muted">{dict.experience.certification.type}</div>
-              <div className="mt-1 text-[13.5px] text-muted-soft">{dict.experience.certification.year}</div>
-            </div>
-            <div className="flex items-center gap-2 font-display text-[14px] font-bold">
-              <span className="flex h-6 w-6 items-center justify-center rounded-[5px] bg-[#03ef62]">DC</span>
-              datacamp
-            </div>
+          <div className="mt-5 flex flex-col gap-4">
+            {certifications.map((cert) => {
+              const content = (
+                <>
+                  <div>
+                    <div className="font-display text-[clamp(15px,1.3vw,19px)] font-bold tracking-[-0.3px]">
+                      {cert.name}
+                    </div>
+                    <div className="mt-2 text-[13.5px] text-signature">{cert.issuer}</div>
+                    <div className="mt-1 text-[13.5px] text-muted-soft">{cert.year}</div>
+                  </div>
+                  {cert.image && (
+                    <Image src={cert.image} alt={cert.issuer} width={28} height={28} className="rounded-[5px]" />
+                  )}
+                </>
+              );
+              return cert.url ? (
+                <a
+                  key={cert.name}
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-wrap items-center justify-between gap-5 rounded-[14px] border border-border p-[clamp(18px,1.8vw,26px)] transition-colors hover:border-[#c9d6ff]"
+                >
+                  {content}
+                </a>
+              ) : (
+                <div
+                  key={cert.name}
+                  className="flex flex-wrap items-center justify-between gap-5 rounded-[14px] border border-border p-[clamp(18px,1.8vw,26px)]"
+                >
+                  {content}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

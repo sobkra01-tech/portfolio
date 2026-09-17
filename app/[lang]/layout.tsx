@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { archivo, instrumentSans } from "@/lib/fonts";
 import { locales, resolveLangParam } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { profile } from "@/data/profile";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
 import MobileTabBar from "@/components/navigation/MobileTabBar";
@@ -23,7 +24,7 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(base),
     title: {
-      default: `Kouakou Kra Modeste — ${dict.meta.titleSuffix.split("—")[1]?.trim() ?? ""}`,
+      default: `${profile.name} — ${profile.title}`,
       template: `%s · Kra Modeste`
     },
     description: dict.meta.description,
@@ -32,7 +33,7 @@ export async function generateMetadata({
       languages: { en: `${base}/en`, fr: `${base}/fr` }
     },
     openGraph: {
-      title: "Kouakou Kra Modeste — Data Scientist | Big Data Engineer",
+      title: `${profile.name} — ${profile.title}`,
       description: dict.meta.description,
       url: `${base}/${lang}`,
       siteName: "Kra Modeste",
@@ -41,7 +42,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary",
-      title: "Kouakou Kra Modeste — Data Scientist | Big Data Engineer",
+      title: `${profile.name} — ${profile.title}`,
       description: dict.meta.description
     }
   };

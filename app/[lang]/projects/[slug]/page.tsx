@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Star, Play, Github, Gauge } from "lucide-react";
@@ -74,46 +75,66 @@ export default async function ProjectDetailPage({
               </span>
             ))}
           </div>
-          <div className="mt-[26px] flex flex-wrap gap-3">
-            <span
-              aria-disabled="true"
-              title={dict.caseStudy.comingSoon}
-              className="flex h-[clamp(44px,3.6vw,52px)] cursor-not-allowed items-center gap-[9px] rounded-md bg-signature/40 px-[22px] text-[13px] font-bold tracking-[1.2px] text-white"
-            >
-              <Play size={16} strokeWidth={1.8} />
-              {dict.caseStudy.liveDemo}
-            </span>
-            <span
-              aria-disabled="true"
-              title={dict.caseStudy.comingSoon}
-              className="flex h-[clamp(44px,3.6vw,52px)] cursor-not-allowed items-center gap-[9px] rounded-md border-[1.5px] border-border-soft px-[22px] text-[13px] font-bold tracking-[1.2px] text-muted-soft"
-            >
-              <Github size={16} strokeWidth={1.8} />
-              {dict.caseStudy.viewGithub}
-            </span>
-          </div>
+          {(project.demoUrl || project.githubUrl) && (
+            <div className="mt-[26px] flex flex-wrap gap-3">
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-[clamp(44px,3.6vw,52px)] items-center gap-[9px] rounded-md bg-signature px-[22px] text-[13px] font-bold tracking-[1.2px] text-white transition-colors hover:bg-signature-dark"
+                >
+                  <Play size={16} strokeWidth={1.8} />
+                  {dict.caseStudy.liveDemo}
+                </a>
+              )}
+              {project.githubUrl && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-[clamp(44px,3.6vw,52px)] items-center gap-[9px] rounded-md border-[1.5px] border-border-soft px-[22px] text-[13px] font-bold tracking-[1.2px] text-muted-soft transition-colors hover:border-ink hover:text-ink"
+                >
+                  <Github size={16} strokeWidth={1.8} />
+                  {dict.caseStudy.viewGithub}
+                </a>
+              )}
+            </div>
+          )}
         </div>
 
-        <div className="rounded-[14px] bg-ink p-3 shadow-[0_24px_60px_rgba(11,18,32,.18)]">
-          <div className="flex h-[clamp(230px,23vw,360px)] flex-col gap-[14px] rounded-[9px] bg-gradient-to-br from-[#0b1a3a] via-[#081227] to-[#0d2247] p-[18px]">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-[7px] text-white/45">
-                <Gauge size={12} strokeWidth={1.8} />
-                <span className="text-[10px] font-semibold tracking-[1.3px]">{dict.caseStudy.monitoring}</span>
-              </div>
-              <div className="font-display text-[15px] font-bold text-white">98.6%</div>
-            </div>
-            <div className="flex flex-1 items-end gap-[7px]">
-              {project.bars.map((h, i) => (
-                <div key={i} className="flex-1 rounded-[4px] bg-[rgba(122,160,255,.6)]" style={{ height: h }} />
-              ))}
-              <div className="ml-[10px] flex h-[clamp(74px,7vw,104px)] w-[clamp(74px,7vw,104px)] flex-none items-center justify-center rounded-full bg-[conic-gradient(#3b76ff_0turn_.42turn,#7aa0ff_.42turn_.66turn,rgba(255,255,255,.12)_.66turn_1turn)]">
-                <div className="h-[62%] w-[62%] rounded-full bg-[#081227]" />
-              </div>
-            </div>
-            <div className="h-[clamp(38px,3.6vw,52px)] rounded-md border-b-[1.5px] border-[rgba(122,160,255,.7)] bg-gradient-to-tr from-[rgba(59,118,255,.25)] to-transparent" />
+        {project.image ? (
+          <div className="relative h-[clamp(230px,23vw,360px)] overflow-hidden rounded-[14px] shadow-[0_24px_60px_rgba(11,18,32,.18)]">
+            <Image
+              src={project.image}
+              alt={project.title[lang]}
+              fill
+              className="object-cover"
+              sizes="(min-width: 640px) 50vw, 100vw"
+            />
           </div>
-        </div>
+        ) : (
+          <div className="rounded-[14px] bg-ink p-3 shadow-[0_24px_60px_rgba(11,18,32,.18)]">
+            <div className="flex h-[clamp(230px,23vw,360px)] flex-col gap-[14px] rounded-[9px] bg-gradient-to-br from-[#0b1a3a] via-[#081227] to-[#0d2247] p-[18px]">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[7px] text-white/45">
+                  <Gauge size={12} strokeWidth={1.8} />
+                  <span className="text-[10px] font-semibold tracking-[1.3px]">{dict.caseStudy.monitoring}</span>
+                </div>
+                <div className="font-display text-[15px] font-bold text-white">98.6%</div>
+              </div>
+              <div className="flex flex-1 items-end gap-[7px]">
+                {project.bars.map((h, i) => (
+                  <div key={i} className="flex-1 rounded-[4px] bg-[rgba(122,160,255,.6)]" style={{ height: h }} />
+                ))}
+                <div className="ml-[10px] flex h-[clamp(74px,7vw,104px)] w-[clamp(74px,7vw,104px)] flex-none items-center justify-center rounded-full bg-[conic-gradient(#3b76ff_0turn_.42turn,#7aa0ff_.42turn_.66turn,rgba(255,255,255,.12)_.66turn_1turn)]">
+                  <div className="h-[62%] w-[62%] rounded-full bg-[#081227]" />
+                </div>
+              </div>
+              <div className="h-[clamp(38px,3.6vw,52px)] rounded-md border-b-[1.5px] border-[rgba(122,160,255,.7)] bg-gradient-to-tr from-[rgba(59,118,255,.25)] to-transparent" />
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="mt-[clamp(28px,3.6vw,52px)]">

@@ -2,6 +2,7 @@ import { Linkedin, Github, Facebook, Send } from "lucide-react";
 import type { Locale } from "@/types";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import { links } from "@/data/links";
+import { profile } from "@/data/profile";
 import ContactForm from "@/components/forms/ContactForm";
 
 const linkIcons = { linkedin: Linkedin, github: Github, facebook: Facebook, mail: Send };
@@ -51,7 +52,7 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
         </div>
 
         <div className="mt-[26px] flex flex-wrap justify-between gap-[14px] border-t border-white/8 pt-5 text-[13px] text-white/45">
-          <div>© {new Date().getFullYear()} Kouakou Kra Modeste. {dict.footer.rights}</div>
+          <div>© {new Date().getFullYear()} {profile.name}. {dict.footer.rights}</div>
           <div className="flex gap-[18px]">
             <span>{dict.footer.builtWith}</span>
             <span>{dict.footer.deployedOn}</span>

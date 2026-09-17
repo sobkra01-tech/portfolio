@@ -4,6 +4,7 @@ import { Sparkles, Search, FlaskConical, GraduationCap, ClipboardList, ArrowRigh
 import { resolveLangParam } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { localePath } from "@/lib/utils";
+import { smartDataServices, smartDataApproach } from "@/data/smartdata";
 import IconBadge from "@/components/cards/IconBadge";
 import Reveal from "@/components/ui/Reveal";
 
@@ -53,16 +54,18 @@ export default async function SmartDataPage({
           {dict.smartdata.servicesTitle}
         </h2>
         <div className="mt-6 grid gap-[clamp(16px,1.8vw,28px)] sm:grid-cols-2">
-          {dict.smartdata.services.map((service, i) => {
+          {smartDataServices.map((service, i) => {
             const Icon = serviceIcons[i];
             return (
-              <Reveal key={service.title} delay={i * 0.06}>
+              <Reveal key={service.title.en} delay={i * 0.06}>
                 <div className="h-full rounded-[14px] border border-border p-[clamp(18px,1.8vw,26px)]">
                   <IconBadge>
                     <Icon size={19} strokeWidth={1.7} />
                   </IconBadge>
-                  <h3 className="mt-4 font-display text-[15px] font-bold tracking-[-0.2px]">{service.title}</h3>
-                  <p className="mt-[10px] text-[14px] leading-[1.6] text-muted">{service.desc}</p>
+                  <h3 className="mt-4 font-display text-[15px] font-bold tracking-[-0.2px]">
+                    {service.title[lang]}
+                  </h3>
+                  <p className="mt-[10px] text-[14px] leading-[1.6] text-muted">{service.desc[lang]}</p>
                 </div>
               </Reveal>
             );
@@ -73,12 +76,12 @@ export default async function SmartDataPage({
           {dict.smartdata.approachTitle}
         </h2>
         <ol className="mt-6 flex flex-col gap-4">
-          {dict.smartdata.approach.map((step, i) => (
-            <li key={step} className="flex gap-4 border-b border-border-soft pb-4">
+          {smartDataApproach.map((step, i) => (
+            <li key={step.en} className="flex gap-4 border-b border-border-soft pb-4">
               <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-[#eef2ff] font-display text-[13px] font-bold text-signature">
                 {i + 1}
               </span>
-              <span className="text-[15px] leading-[1.6] text-muted">{step}</span>
+              <span className="text-[15px] leading-[1.6] text-muted">{step[lang]}</span>
             </li>
           ))}
         </ol>

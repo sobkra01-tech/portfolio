@@ -32,20 +32,56 @@ export interface Project {
   challenge: LocalizedText;
   solution: LocalizedText;
   results: ProjectResult[];
+  /** Path under public/, e.g. "/images/projects/foo.png". Omit to use the decorative fallback thumbnail. */
+  image?: string;
+  screenshots?: string[];
+  githubUrl?: string;
+  demoUrl?: string;
 }
 
 export interface ExperienceItem {
   period: LocalizedText;
   role: LocalizedText;
   org: string;
+  location?: string;
   desc: LocalizedText;
   tags: LocalizedText[];
+  responsibilities?: LocalizedText[];
+  achievements?: LocalizedText[];
+  /** Path under public/, e.g. "/images/logos/foo.png" */
+  logo?: string;
+  link?: string;
 }
 
 export interface EducationItem {
   period: string;
   title: LocalizedText;
   school: string;
+  description?: LocalizedText;
+}
+
+export interface Certification {
+  name: string;
+  issuer: string;
+  year: string;
+  url?: string;
+  /** Path under public/, e.g. "/images/logos/datacamp.png" */
+  image?: string;
+}
+
+export interface Profile {
+  name: string;
+  /** Professional headline, kept identical across locales by design convention (e.g. "Data Scientist | Big Data Engineer"). */
+  title: string;
+  bio: LocalizedText[];
+  location: string | null;
+  email: string | null;
+  phone: string | null;
+  availability: LocalizedText | null;
+  /** Path under public/, e.g. "/images/portrait.jpg". Null shows the placeholder. */
+  photo: string | null;
+  /** Path under public/, e.g. "/cv/kra-modeste-cv.pdf". Null hides the CV button. */
+  cvUrl: string | null;
 }
 
 export interface SkillItem {

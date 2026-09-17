@@ -15,9 +15,3 @@ export const education: EducationItem[] = [
     school: "Université Internationale des Sciences et Technologies (UIST)"
   }
 ];
-
-export const certification = {
-  name: "Data Science",
-  issuer: "DataCamp",
-  year: "2024"
-};

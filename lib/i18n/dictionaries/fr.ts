@@ -1,6 +1,5 @@
 const fr = {
   meta: {
-    titleSuffix: "Kra Modeste — Data Scientist | Big Data Engineer",
     description:
       "Portfolio de Kouakou Kra Modeste, Data Scientist & Big Data Engineer. Études de cas en ingénierie des données, machine learning, analytics et business intelligence."
   },
@@ -89,30 +88,7 @@ const fr = {
     lead: "SmartData Consulting accompagne chercheurs et organisations sur l'ensemble du parcours de la donnée — de la collecte à une analyse prête pour publication.",
     intro: "SmartData Consulting est une activité dédiée qui aide chercheurs et institutions à tirer davantage de valeur et de rigueur de leurs données, sans jamais transiger sur les standards scientifiques.",
     servicesTitle: "Ce que propose SmartData Consulting",
-    services: [
-      {
-        title: "Analyse et interprétation des données",
-        desc: "Analyse statistique et interprétation des données de recherche, adaptées au protocole d'étude et aux questions de recherche."
-      },
-      {
-        title: "Accompagnement à la rédaction scientifique",
-        desc: "Aide à la structuration et à la rédaction des sections analytiques des articles, mémoires et thèses."
-      },
-      {
-        title: "Formation en analyse de données",
-        desc: "Formation pratique aux logiciels statistiques et aux méthodes d'analyse de données pour chercheurs et équipes."
-      },
-      {
-        title: "Formation à la collecte de données",
-        desc: "Accompagnement et formation sur la conception d'enquêtes, l'échantillonnage et les outils de collecte de données."
-      }
-    ],
     approachTitle: "Approche",
-    approach: [
-      "Comprendre le contexte de recherche, les questions et les contraintes avant de toucher aux données.",
-      "Appliquer des méthodes statistiques rigoureuses et transparentes, adaptées au protocole d'étude.",
-      "Communiquer les résultats avec clarté, sous une forme qui résiste à l'examen académique."
-    ],
     statusNote: "SmartData Consulting est actuellement en construction. Les détails sur l'accompagnement et la disponibilité seront ajoutés prochainement.",
     cta: "Discuter d'un projet"
   },
@@ -120,25 +96,16 @@ const fr = {
     title: "Mon expérience",
     educationTitle: "Formation",
     certificationTitle: "Certification",
-    skillsTitle: "Compétences techniques",
-    certification: {
-      name: "Data Science",
-      issuer: "DataCamp",
-      type: "Certification",
-      year: "2024"
-    }
+    skillsTitle: "Compétences techniques"
   },
   aboutPage: {
     title: "À propos de moi",
-    bodyOne: "Je suis Data Scientist et Big Data Engineer avec une solide formation en statistiques et en économie. J'aide les organisations à exploiter la puissance de la donnée pour améliorer leur performance, optimiser leurs opérations et prendre de meilleures décisions.",
-    bodyTwo: "Mon approche combine rigueur analytique, compétences techniques et compréhension business pour construire des solutions qui créent un impact réel.",
     facts: {
       name: "Nom",
       location: "Localisation",
       email: "Email",
       availability: "Disponibilité"
     },
-    availability: "Ouvert à de nouvelles opportunités",
     emailPending: "Sera ajouté prochainement",
     languagesTitle: "Langues",
     portraitPlaceholder: "Portrait — ajouter public/images/portrait.jpg"
@@ -155,12 +122,7 @@ const fr = {
       send: "Envoyer le message",
       sent: "Message envoyé"
     },
-    linksTitle: "Ailleurs",
-    linkHandles: {
-      linkedin: "Se connecter",
-      github: "Suivre",
-      facebook: "Se connecter"
-    }
+    linksTitle: "Ailleurs"
   },
   caseStudy: {
     featured: "PROJET PHARE",
