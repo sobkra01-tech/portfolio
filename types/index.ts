@@ -6,7 +6,7 @@ export interface LocalizedText {
 }
 
 export interface ProjectResult {
-  value: string;
+  value: LocalizedText;
   label: LocalizedText;
 }
 
@@ -39,7 +39,7 @@ export interface ExperienceItem {
   role: LocalizedText;
   org: string;
   desc: LocalizedText;
-  tags: string[];
+  tags: LocalizedText[];
 }
 
 export interface EducationItem {

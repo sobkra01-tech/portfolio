@@ -140,7 +140,8 @@ const fr = {
     },
     availability: "Ouvert à de nouvelles opportunités",
     emailPending: "Sera ajouté prochainement",
-    languagesTitle: "Langues"
+    languagesTitle: "Langues",
+    portraitPlaceholder: "Portrait — ajouter public/images/portrait.jpg"
   },
   contact: {
     title: "Construisons quelque chose de significatif avec la donnée.",
@@ -181,7 +182,10 @@ const fr = {
   },
   common: {
     backToTop: "Retour en haut",
-    language: "Langue"
+    language: "Langue",
+    primaryNav: "Principal",
+    breadcrumb: "Fil d'Ariane",
+    skipToContent: "Aller au contenu"
   }
 };
 

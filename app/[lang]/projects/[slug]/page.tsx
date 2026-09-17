@@ -40,7 +40,7 @@ export default async function ProjectDetailPage({
 
   return (
     <div className="mx-auto max-w-shell px-[clamp(18px,3.9vw,72px)] py-[clamp(24px,3vw,44px)] pb-[clamp(48px,5.6vw,88px)]">
-      <nav aria-label="Breadcrumb" className="flex items-center gap-[10px] text-[13px] text-muted-soft">
+      <nav aria-label={dict.common.breadcrumb} className="flex items-center gap-[10px] text-[13px] text-muted-soft">
         <Link href={localePath(lang, "/projects")}>{dict.nav.work}</Link>
         <span>/</span>
         <span>{project.category}</span>

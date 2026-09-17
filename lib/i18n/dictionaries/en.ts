@@ -140,7 +140,8 @@ const en = {
     },
     availability: "Open to new opportunities",
     emailPending: "Will be added soon",
-    languagesTitle: "Languages"
+    languagesTitle: "Languages",
+    portraitPlaceholder: "Portrait — add public/images/portrait.jpg"
   },
   contact: {
     title: "Let's build something meaningful with data.",
@@ -181,7 +182,10 @@ const en = {
   },
   common: {
     backToTop: "Back to top",
-    language: "Language"
+    language: "Language",
+    primaryNav: "Primary",
+    breadcrumb: "Breadcrumb",
+    skipToContent: "Skip to content"
   }
 };
 

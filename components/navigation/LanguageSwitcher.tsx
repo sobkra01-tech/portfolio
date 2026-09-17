@@ -3,14 +3,17 @@
 import { usePathname, useRouter } from "next/navigation";
 import { locales } from "@/lib/i18n/config";
 import type { Locale } from "@/types";
+import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import { cn } from "@/lib/utils";
 
 export default function LanguageSwitcher({
   lang,
+  dict,
   className,
   pill = false
 }: {
   lang: Locale;
+  dict: Dictionary;
   className?: string;
   pill?: boolean;
 }) {
@@ -33,7 +36,7 @@ export default function LanguageSwitcher({
         className
       )}
       role="group"
-      aria-label="Language"
+      aria-label={dict.common.language}
     >
       {locales.map((locale) => (
         <button

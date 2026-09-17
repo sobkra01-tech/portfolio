@@ -64,7 +64,7 @@ export default async function LangLayout({
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-signature focus:px-4 focus:py-2 focus:text-white"
         >
-          Skip to content
+          {dict.common.skipToContent}
         </a>
         <Navbar lang={lang} dict={dict} />
         <main id="main-content" className="pb-20 md:pb-0">

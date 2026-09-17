@@ -10,7 +10,7 @@ export const projects: Project[] = [
     bars: ["38%", "62%", "48%", "80%", "56%", "70%", "44%"],
     stack: ["Python", "SQL", "Airflow", "Power BI", "PostgreSQL", "Docker"],
     featured: true,
-    title: { en: "Production Intelligence", fr: "Production Intelligence" },
+    title: { en: "Production Intelligence", fr: "Intelligence de Production" },
     kicker: { en: "DATA ENGINEERING", fr: "DATA ENGINEERING" },
     tagline: { en: "Data Engineering • BI", fr: "Data Engineering • BI" },
     short: {
@@ -26,10 +26,10 @@ export const projects: Project[] = [
       fr: "J'ai conçu et développé une solution data de bout en bout qui automatise la collecte des données, centralise l'information et fournit des tableaux de bord en temps réel pour un meilleur suivi et une meilleure prise de décision."
     },
     results: [
-      { value: "+35%", label: { en: "Improvement in production visibility", fr: "Amélioration de la visibilité sur la production" } },
-      { value: "−60%", label: { en: "Time spent on manual reporting", fr: "Temps consacré au reporting manuel" } },
-      { value: "Real-time", label: { en: "Monitoring and alerts", fr: "Supervision et alertes" } },
-      { value: "Better", label: { en: "Decision making", fr: "Prise de décision" } }
+      { value: { en: "+35%", fr: "+35%" }, label: { en: "Improvement in production visibility", fr: "Amélioration de la visibilité sur la production" } },
+      { value: { en: "−60%", fr: "−60%" }, label: { en: "Time spent on manual reporting", fr: "Temps consacré au reporting manuel" } },
+      { value: { en: "Real-time", fr: "Temps réel" }, label: { en: "Monitoring and alerts", fr: "Supervision et alertes" } },
+      { value: { en: "Better", fr: "Meilleure" }, label: { en: "Decision making", fr: "Prise de décision" } }
     ]
   },
   {
@@ -57,9 +57,9 @@ export const projects: Project[] = [
       fr: "J'ai construit un modèle de risque de panne à partir de l'historique des capteurs et l'ai intégré dans un tableau de bord de planification de la maintenance, avec un ré-entraînement hebdomadaire."
     },
     results: [
-      { value: "−28%", label: { en: "Unplanned downtime over two quarters", fr: "Arrêts imprévus sur deux trimestres" } },
-      { value: "0.91", label: { en: "ROC AUC on held-out failures", fr: "ROC AUC sur les pannes de test" } },
-      { value: "7 days", label: { en: "Median early-warning window", fr: "Délai médian d'alerte précoce" } }
+      { value: { en: "−28%", fr: "−28%" }, label: { en: "Unplanned downtime over two quarters", fr: "Arrêts imprévus sur deux trimestres" } },
+      { value: { en: "0.91", fr: "0,91" }, label: { en: "ROC AUC on held-out failures", fr: "ROC AUC sur les pannes de test" } },
+      { value: { en: "7 days", fr: "7 jours" }, label: { en: "Median early-warning window", fr: "Délai médian d'alerte précoce" } }
     ]
   },
   {
@@ -87,9 +87,9 @@ export const projects: Project[] = [
       fr: "J'ai mis en place une architecture de streaming avec un lakehouse bronze/silver/gold et des jobs d'ingestion validés par des tests de contrat."
     },
     results: [
-      { value: "< 5s", label: { en: "End-to-end event latency", fr: "Latence de bout en bout" } },
-      { value: "12M", label: { en: "Events processed per day", fr: "Événements traités par jour" } },
-      { value: "99.9%", label: { en: "Pipeline availability", fr: "Disponibilité du pipeline" } }
+      { value: { en: "< 5s", fr: "< 5 s" }, label: { en: "End-to-end event latency", fr: "Latence de bout en bout" } },
+      { value: { en: "12M", fr: "12 M" }, label: { en: "Events processed per day", fr: "Événements traités par jour" } },
+      { value: { en: "99.9%", fr: "99,9 %" }, label: { en: "Pipeline availability", fr: "Disponibilité du pipeline" } }
     ]
   },
   {
@@ -117,9 +117,9 @@ export const projects: Project[] = [
       fr: "J'ai automatisé la collecte et le scoring des signaux de marché, avec une note hebdomadaire générée à partir d'un même pipeline reproductible."
     },
     results: [
-      { value: "−70%", label: { en: "Time to produce a market study", fr: "Temps de production d'une étude de marché" } },
-      { value: "40+", label: { en: "Sources consolidated weekly", fr: "Sources consolidées chaque semaine" } },
-      { value: "Weekly", label: { en: "Refreshed competitive view", fr: "Vision concurrentielle actualisée" } }
+      { value: { en: "−70%", fr: "−70%" }, label: { en: "Time to produce a market study", fr: "Temps de production d'une étude de marché" } },
+      { value: { en: "40+", fr: "40+" }, label: { en: "Sources consolidated weekly", fr: "Sources consolidées chaque semaine" } },
+      { value: { en: "Weekly", fr: "Hebdomadaire" }, label: { en: "Refreshed competitive view", fr: "Vision concurrentielle actualisée" } }
     ]
   },
   {
@@ -147,9 +147,9 @@ export const projects: Project[] = [
       fr: "J'ai modélisé une couche sémantique partagée et livré un tableau de bord de direction unique, avec exploration par région, produit et commercial."
     },
     results: [
-      { value: "1", label: { en: "Single source of truth for sales KPIs", fr: "Source unique de vérité pour les KPI ventes" } },
-      { value: "−45%", label: { en: "Reporting effort per month", fr: "Effort de reporting mensuel" } },
-      { value: "+18%", label: { en: "Forecast accuracy", fr: "Précision des prévisions" } }
+      { value: { en: "1", fr: "1" }, label: { en: "Single source of truth for sales KPIs", fr: "Source unique de vérité pour les KPI ventes" } },
+      { value: { en: "−45%", fr: "−45%" }, label: { en: "Reporting effort per month", fr: "Effort de reporting mensuel" } },
+      { value: { en: "+18%", fr: "+18%" }, label: { en: "Forecast accuracy", fr: "Précision des prévisions" } }
     ]
   },
   {
@@ -177,9 +177,9 @@ export const projects: Project[] = [
       fr: "J'ai construit des segments comportementaux à partir des données transactionnelles et les ai intégrés à l'outil de campagne comme audiences actualisables."
     },
     results: [
-      { value: "6", label: { en: "Actionable customer segments", fr: "Segments clients actionnables" } },
-      { value: "+22%", label: { en: "Campaign response rate", fr: "Taux de réponse aux campagnes" } },
-      { value: "−31%", label: { en: "Cost per acquisition", fr: "Coût par acquisition" } }
+      { value: { en: "6", fr: "6" }, label: { en: "Actionable customer segments", fr: "Segments clients actionnables" } },
+      { value: { en: "+22%", fr: "+22%" }, label: { en: "Campaign response rate", fr: "Taux de réponse aux campagnes" } },
+      { value: { en: "−31%", fr: "−31%" }, label: { en: "Cost per acquisition", fr: "Coût par acquisition" } }
     ]
   }
 ];

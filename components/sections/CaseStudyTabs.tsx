@@ -72,7 +72,7 @@ export default function CaseStudyTabs({
                   className="flex items-baseline gap-4 border-b border-border-soft py-[14px] last:border-none"
                 >
                   <div className="flex-none font-display text-[clamp(15px,1.35vw,20px)] font-bold tracking-[-0.4px] text-signature">
-                    {result.value}
+                    {result.value[lang]}
                   </div>
                   <div className="text-[clamp(12px,1.05vw,15px)] leading-[1.5] text-muted">
                     {result.label[lang]}

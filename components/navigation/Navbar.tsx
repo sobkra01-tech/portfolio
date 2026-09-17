@@ -28,7 +28,7 @@ export default function Navbar({ lang, dict }: { lang: Locale; dict: Dictionary 
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-[clamp(16px,2.4vw,40px)] md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-[clamp(16px,2.4vw,40px)] md:flex" aria-label={dict.common.primaryNav}>
           {navLinks.map((item) => {
             const Icon = icons[item.key];
             return (
@@ -42,11 +42,11 @@ export default function Navbar({ lang, dict }: { lang: Locale; dict: Dictionary 
               </Link>
             );
           })}
-          <LanguageSwitcher lang={lang} className="pl-[10px]" />
+          <LanguageSwitcher lang={lang} dict={dict} className="pl-[10px]" />
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
-          <LanguageSwitcher lang={lang} pill />
+          <LanguageSwitcher lang={lang} dict={dict} pill />
         </div>
       </div>
     </header>

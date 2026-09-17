@@ -58,8 +58,8 @@ export default async function ExperiencePage({
             </p>
             <div className="mt-[14px] flex flex-wrap gap-2">
               {item.tags.map((tag) => (
-                <span key={tag} className="rounded-[5px] bg-surface-tint px-[11px] py-[7px] text-[12.5px] font-medium text-muted">
-                  {tag}
+                <span key={tag.en} className="rounded-[5px] bg-surface-tint px-[11px] py-[7px] text-[12.5px] font-medium text-muted">
+                  {tag[lang]}
                 </span>
               ))}
             </div>
