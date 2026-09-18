@@ -43,6 +43,8 @@ export interface Project {
 
 export interface ExperienceItem {
   period: LocalizedText;
+  /** The year this role started, e.g. 2023 — extracted from `period`, used only to compute "years of experience". Never rendered as-is; `period` stays the source for on-page display text. */
+  startYear: number;
   role: LocalizedText;
   org: string;
   location?: string;

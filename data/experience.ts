@@ -3,6 +3,7 @@ import type { ExperienceItem } from "@/types";
 export const experience: ExperienceItem[] = [
   {
     period: { en: "2026 — PRESENT", fr: "2026 — PRÉSENT" },
+    startYear: 2026,
     role: { en: "Chargé de Projet Data", fr: "Chargé de Projet Data" },
     org: "SOBERY SARL",
     desc: {
@@ -19,6 +20,7 @@ export const experience: ExperienceItem[] = [
   },
   {
     period: { en: "MARCH 2024", fr: "MARS 2024" },
+    startYear: 2024,
     role: { en: "Chargé d'Études", fr: "Chargé d'Études" },
     org: "Africa Data Intelligence (ADI)",
     desc: {
@@ -33,6 +35,7 @@ export const experience: ExperienceItem[] = [
   },
   {
     period: { en: "2023", fr: "2023" },
+    startYear: 2023,
     role: { en: "Data Analyst", fr: "Data Analyst" },
     org: "KAN Group",
     desc: {

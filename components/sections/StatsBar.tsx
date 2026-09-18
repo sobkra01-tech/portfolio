@@ -2,13 +2,16 @@ import { Settings, TrendingUp, Grid3x3, CheckCircle2 } from "lucide-react";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import { projects } from "@/data/projects";
 import { getProjectStats } from "@/lib/project-stats";
+import { experience } from "@/data/experience";
+import { getExperienceStats } from "@/lib/experience-stats";
 import IconBadge from "@/components/cards/IconBadge";
 
 export default function StatsBar({ dict }: { dict: Dictionary }) {
   const { total: projectsCompleted, dashboardsBuilt } = getProjectStats(projects);
+  const { yearsOfExperience } = getExperienceStats(experience);
 
   const stats = [
-    { value: "3+", label: dict.stats.years, icon: Settings },
+    { value: `${yearsOfExperience}+`, label: dict.stats.years, icon: Settings },
     { value: `${projectsCompleted}`, label: dict.stats.projects, icon: TrendingUp },
     { value: `${dashboardsBuilt}`, label: dict.stats.dashboards, icon: Grid3x3 },
     { value: "100%", label: dict.stats.commitment, icon: CheckCircle2 }
