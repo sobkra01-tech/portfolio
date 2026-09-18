@@ -4,6 +4,8 @@ import { User, MapPin, Mail, Clock, Globe } from "lucide-react";
 import { resolveLangParam } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { cn } from "@/lib/utils";
+import { buildPageMetadata } from "@/lib/seo";
+import { profilePersonSchema } from "@/lib/structured-data";
 import { languages } from "@/data/skills";
 import { profile } from "@/data/profile";
 import PortraitPlaceholder from "@/components/cards/PortraitPlaceholder";
@@ -15,7 +17,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const lang = await resolveLangParam(params);
   const dict = getDictionary(lang);
-  return { title: dict.aboutPage.title };
+  return buildPageMetadata({
+    lang,
+    path: "/about",
+    title: dict.aboutPage.title,
+    description: dict.aboutPage.metaDescription
+  });
 }
 
 export default async function AboutPage({
@@ -37,6 +44,10 @@ export default async function AboutPage({
 
   return (
     <div className="mx-auto max-w-shell px-[clamp(18px,3.9vw,72px)] py-[clamp(36px,4.4vw,72px)] pb-[clamp(44px,5vw,80px)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePersonSchema()) }}
+      />
       <div className="flex items-center gap-3">
         <User size={28} strokeWidth={1.7} />
         <h1 className="font-display text-[clamp(30px,3.6vw,52px)] font-extrabold tracking-[-0.045em]">

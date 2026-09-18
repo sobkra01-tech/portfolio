@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Briefcase, Calendar, Building2, MapPin, GraduationCap, Award, Zap } from "lucide-react";
 import { resolveLangParam } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { buildPageMetadata } from "@/lib/seo";
 import { experience } from "@/data/experience";
 import { education } from "@/data/education";
 import { certifications } from "@/data/certifications";
@@ -18,7 +19,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const lang = await resolveLangParam(params);
   const dict = getDictionary(lang);
-  return { title: dict.experience.title };
+  return buildPageMetadata({
+    lang,
+    path: "/experience",
+    title: dict.experience.title,
+    description: dict.experience.metaDescription
+  });
 }
 
 export default async function ExperiencePage({

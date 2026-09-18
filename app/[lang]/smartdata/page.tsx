@@ -4,6 +4,7 @@ import { Sparkles, ArrowRight } from "lucide-react";
 import { resolveLangParam } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { localePath } from "@/lib/utils";
+import { buildPageMetadata } from "@/lib/seo";
 import { smartDataServices, smartDataApproach } from "@/data/smartdata";
 import { smartDataIcons } from "@/lib/smartdata-icons";
 import IconBadge from "@/components/cards/IconBadge";
@@ -16,7 +17,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const lang = await resolveLangParam(params);
   const dict = getDictionary(lang);
-  return { title: "SmartData Consulting", description: dict.smartdata.lead };
+  return buildPageMetadata({
+    lang,
+    path: "/smartdata",
+    title: "SmartData Consulting",
+    description: dict.smartdata.lead
+  });
 }
 
 export default async function SmartDataPage({

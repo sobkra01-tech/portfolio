@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import { Star, Play, Github, Gauge } from "lucide-react";
 import { resolveLangParam, locales } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { buildPageMetadata } from "@/lib/seo";
+import { projectSchema } from "@/lib/structured-data";
 import { projects, getProjectBySlug } from "@/data/projects";
 import { localePath } from "@/lib/utils";
 import CaseStudyTabs from "@/components/sections/CaseStudyTabs";
@@ -22,10 +24,13 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
   if (!project) return {};
   const lang = await resolveLangParam(params);
-  return {
+  return buildPageMetadata({
+    lang,
+    path: `/projects/${slug}`,
     title: project.title[lang],
-    description: project.short[lang]
-  };
+    description: project.short[lang],
+    image: project.image
+  });
 }
 
 export default async function ProjectDetailPage({
@@ -41,6 +46,12 @@ export default async function ProjectDetailPage({
 
   return (
     <div className="mx-auto max-w-shell px-[clamp(18px,3.9vw,72px)] py-[clamp(24px,3vw,44px)] pb-[clamp(48px,5.6vw,88px)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(projectSchema(project, lang, `/projects/${slug}`))
+        }}
+      />
       <nav aria-label={dict.common.breadcrumb} className="flex items-center gap-[10px] text-[13px] text-muted-soft">
         <Link href={localePath(lang, "/projects")}>{dict.nav.work}</Link>
         <span>/</span>

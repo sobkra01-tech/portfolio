@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Linkedin, Github, Facebook } from "lucide-react";
 import { resolveLangParam } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { buildPageMetadata } from "@/lib/seo";
 import { links } from "@/data/links";
 import ContactForm from "@/components/forms/ContactForm";
 
@@ -14,7 +15,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const lang = await resolveLangParam(params);
   const dict = getDictionary(lang);
-  return { title: dict.nav.contact, description: dict.contact.body };
+  return buildPageMetadata({
+    lang,
+    path: "/contact",
+    title: dict.nav.contact,
+    description: dict.contact.body
+  });
 }
 
 export default async function ContactPage({

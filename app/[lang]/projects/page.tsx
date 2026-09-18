@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { resolveLangParam } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { buildPageMetadata } from "@/lib/seo";
 import { projects } from "@/data/projects";
 import ProjectsExplorer from "@/components/sections/ProjectsExplorer";
 
@@ -11,7 +12,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const lang = await resolveLangParam(params);
   const dict = getDictionary(lang);
-  return { title: dict.work.allTitle, description: dict.work.allBody };
+  return buildPageMetadata({
+    lang,
+    path: "/projects",
+    title: dict.work.allTitle,
+    description: dict.work.allBody
+  });
 }
 
 export default async function ProjectsPage({

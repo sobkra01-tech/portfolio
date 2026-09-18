@@ -54,7 +54,7 @@ export default function DataToDecision({ lang, dict }: { lang: Locale; dict: Dic
                   <IconBadge dark size={46} className="mx-auto">
                     <Icon size={19} strokeWidth={1.7} />
                   </IconBadge>
-                  <div className="mt-4 font-display text-[15px] font-bold">{service.title[lang]}</div>
+                  <h3 className="mt-4 font-display text-[15px] font-bold">{service.title[lang]}</h3>
                   <p className="mt-[10px] text-[13px] leading-[1.6] text-white/62">{service.desc[lang]}</p>
                 </div>
               </Reveal>

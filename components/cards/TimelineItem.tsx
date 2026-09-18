@@ -24,9 +24,9 @@ export default function TimelineItem({
         <div className="flex items-center gap-[7px] text-signature">
           <span className="text-[13px] font-semibold tracking-[1px]">{eyebrow}</span>
         </div>
-        <div className="mt-2 font-display text-[18px] font-bold tracking-[-0.4px] sm:text-[22px]">
+        <h3 className="mt-2 font-display text-[18px] font-bold tracking-[-0.4px] sm:text-[22px]">
           {title}
-        </div>
+        </h3>
         {children}
       </div>
     </div>

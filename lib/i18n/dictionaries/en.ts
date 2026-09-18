@@ -88,12 +88,16 @@ const en = {
   },
   experience: {
     title: "My Experience",
+    metaDescription:
+      "Professional experience of Kouakou Kra Modeste in data engineering, analytics and business intelligence, including roles at SOBERY SARL, Africa Data Intelligence and KAN Group.",
     educationTitle: "Education",
     certificationTitle: "Certification",
     skillsTitle: "Technical Skills"
   },
   aboutPage: {
     title: "About Me",
+    metaDescription:
+      "Learn more about Kouakou Kra Modeste, Data Scientist and Big Data Engineer based in Côte d'Ivoire, and the skills and languages behind his work.",
     facts: {
       name: "Name",
       location: "Location",
@@ -142,6 +146,11 @@ const en = {
     primaryNav: "Primary",
     breadcrumb: "Breadcrumb",
     skipToContent: "Skip to content"
+  },
+  notFound: {
+    title: "Page not found",
+    body: "The page you're looking for doesn't exist or may have moved.",
+    cta: "Back to home"
   }
 };
 

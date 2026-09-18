@@ -87,9 +87,15 @@ export default function CaseStudyTabs({
 
       {active === 4 && project.screenshots && project.screenshots.length > 0 ? (
         <div className="mt-[clamp(26px,3.2vw,46px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-[clamp(16px,2vw,28px)]">
-          {project.screenshots.map((screenshot) => (
+          {project.screenshots.map((screenshot, i) => (
             <div key={screenshot} className="relative h-[180px] overflow-hidden rounded-[12px] border border-border">
-              <Image src={screenshot} alt={project.title[lang]} fill className="object-cover" sizes="260px" />
+              <Image
+                src={screenshot}
+                alt={`${project.title[lang]} — ${dict.caseStudy.tabs[4]} ${i + 1}`}
+                fill
+                className="object-cover"
+                sizes="260px"
+              />
             </div>
           ))}
         </div>
