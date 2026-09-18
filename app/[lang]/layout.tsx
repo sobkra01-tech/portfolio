@@ -41,7 +41,7 @@ export async function generateMetadata({
       siteName: profile.name,
       locale: lang === "fr" ? "fr_FR" : "en_US",
       type: "website",
-      images: [{ url: `${siteUrl}${defaultOgImage}` }]
+      images: [{ url: `${siteUrl}${defaultOgImage}`, width: 1200, height: 630 }]
     },
     twitter: {
       card: "summary"

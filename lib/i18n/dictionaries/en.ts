@@ -19,6 +19,7 @@ const en = {
     tags: ["DATA SCIENCE", "ENGINEERING", "ANALYTICS", "INTELLIGENCE"],
     ctaWork: "Explore my work",
     ctaContact: "Contact me",
+    scrollDown: "Scroll to About section",
     dataVolume: "DATA VOLUME",
     trend: "TREND"
   },
@@ -57,6 +58,7 @@ const en = {
     allTitle: "All Projects",
     allBody: "Explore a collection of projects across data science, engineering, analytics and automation.",
     searchPlaceholder: "Search projects...",
+    listTitle: "Project list",
     empty: "No projects match this filter yet.",
     filterAll: "All"
   },
@@ -88,6 +90,7 @@ const en = {
   },
   experience: {
     title: "My Experience",
+    timelineTitle: "Professional roles",
     metaDescription:
       "Professional experience of Kouakou Kra Modeste in data engineering, analytics and business intelligence, including roles at SOBERY SARL, Africa Data Intelligence and KAN Group.",
     educationTitle: "Education",
@@ -141,7 +144,6 @@ const en = {
     deployedOn: "Deployed on Vercel"
   },
   common: {
-    backToTop: "Back to top",
     language: "Language",
     primaryNav: "Primary",
     breadcrumb: "Breadcrumb",

@@ -29,7 +29,7 @@ export default function ExpertiseSection({ dict }: { dict: Dictionary }) {
               <Reveal key={cap.title} delay={i * 0.08}>
                 <div className="h-full rounded-[14px] border border-border bg-white p-[clamp(16px,1.5vw,24px)] transition-shadow hover:border-[#c9d6ff] hover:shadow-[0_14px_30px_rgba(11,18,32,.06)]">
                   <IconBadge>
-                    <Icon size={19} strokeWidth={1.7} />
+                    <Icon size={19} strokeWidth={1.7} aria-hidden="true" />
                   </IconBadge>
                   <div className="mt-4 font-display text-[13px] font-bold tracking-[1px]">{cap.title}</div>
                   <ul className="mt-[14px] flex flex-col gap-[9px]">

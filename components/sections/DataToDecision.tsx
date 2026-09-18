@@ -26,13 +26,13 @@ export default function DataToDecision({ lang, dict }: { lang: Locale; dict: Dic
               <div key={step.title} className="flex items-start gap-2">
                 <div className="flex flex-1 flex-col items-center gap-[clamp(8px,.9vw,14px)] text-center">
                   <IconBadge dark size={54}>
-                    <Icon size={21} strokeWidth={1.6} />
+                    <Icon size={21} strokeWidth={1.6} aria-hidden="true" />
                   </IconBadge>
                   <div className="font-display text-[12px] font-bold tracking-[1px]">{step.title}</div>
                   <div className="text-[12px] text-white/60">{step.desc}</div>
                 </div>
                 {i < dict.process.steps.length - 1 && (
-                  <div className="mt-5 text-white/20">
+                  <div className="mt-5 text-white/20" aria-hidden="true">
                     <ArrowRight size={14} strokeWidth={1.7} />
                   </div>
                 )}
@@ -52,7 +52,7 @@ export default function DataToDecision({ lang, dict }: { lang: Locale; dict: Dic
               <Reveal key={service.title.en} delay={i * 0.06}>
                 <div className="h-full rounded-[14px] border border-white/12 bg-white/[.03] p-[clamp(18px,1.8vw,28px)] text-center">
                   <IconBadge dark size={46} className="mx-auto">
-                    <Icon size={19} strokeWidth={1.7} />
+                    <Icon size={19} strokeWidth={1.7} aria-hidden="true" />
                   </IconBadge>
                   <h3 className="mt-4 font-display text-[15px] font-bold">{service.title[lang]}</h3>
                   <p className="mt-[10px] text-[13px] leading-[1.6] text-white/62">{service.desc[lang]}</p>
@@ -68,7 +68,7 @@ export default function DataToDecision({ lang, dict }: { lang: Locale; dict: Dic
             href={localePath(lang, "/smartdata")}
             className="flex h-[40px] items-center gap-2 rounded-md border border-white/25 px-[18px] text-[11px] font-semibold tracking-[1.2px] transition-colors hover:bg-white/8"
           >
-            <Sparkles size={13} strokeWidth={1.8} />
+            <Sparkles size={13} strokeWidth={1.8} aria-hidden="true" />
             {dict.process.learnMore}
           </Link>
         </div>

@@ -59,7 +59,7 @@ export default async function ContactPage({
                   className="flex items-center gap-4 rounded-[14px] border border-border p-4 transition-colors hover:border-signature-light"
                 >
                   <span className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-[#eef2ff] text-signature">
-                    <Icon size={18} strokeWidth={1.7} />
+                    <Icon size={18} strokeWidth={1.7} aria-hidden="true" />
                   </span>
                   <span>
                     <span className="block text-[14px] font-semibold">{link.name}</span>

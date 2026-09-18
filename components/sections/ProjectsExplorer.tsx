@@ -54,7 +54,7 @@ export default function ProjectsExplorer({
           </button>
         ))}
         <div className="ml-auto flex h-10 min-w-[210px] flex-1 items-center gap-[9px] rounded-lg border border-border px-[14px] text-muted-soft sm:flex-none">
-          <Search size={15} />
+          <Search size={15} aria-hidden="true" />
           <input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -65,6 +65,7 @@ export default function ProjectsExplorer({
         </div>
       </div>
 
+      <h2 className="sr-only">{dict.work.listTitle}</h2>
       {visible.length === 0 ? (
         <p className="mt-16 text-center text-[15px] text-muted-soft">{dict.work.empty}</p>
       ) : (

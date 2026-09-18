@@ -61,7 +61,7 @@ export default function ProjectCard({
             <p className="mt-2 flex-1 text-[13px] leading-[1.55] text-muted">{project.short[lang]}</p>
             <div className="mt-3 flex items-center gap-[7px] text-[12px] font-semibold text-signature">
               {dict.work.viewCase}
-              <ArrowRight size={14} strokeWidth={1.9} />
+              <ArrowRight size={14} strokeWidth={1.9} aria-hidden="true" />
             </div>
           </>
         ) : (

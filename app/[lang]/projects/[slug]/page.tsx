@@ -68,7 +68,7 @@ export default async function ProjectDetailPage({
             </h1>
             {project.featured && (
               <span className="mt-2 flex items-center gap-[7px] rounded-md border border-border px-[11px] py-2 text-[11.5px] font-semibold tracking-[1.2px] text-muted">
-                <Star size={12} strokeWidth={1.8} />
+                <Star size={12} strokeWidth={1.8} aria-hidden="true" />
                 {dict.caseStudy.featured}
               </span>
             )}
@@ -95,7 +95,7 @@ export default async function ProjectDetailPage({
                   rel="noopener noreferrer"
                   className="flex h-[clamp(44px,3.6vw,52px)] items-center gap-[9px] rounded-md bg-signature px-[22px] text-[13px] font-bold tracking-[1.2px] text-white transition-colors hover:bg-signature-dark"
                 >
-                  <Play size={16} strokeWidth={1.8} />
+                  <Play size={16} strokeWidth={1.8} aria-hidden="true" />
                   {dict.caseStudy.liveDemo}
                 </a>
               )}
@@ -106,7 +106,7 @@ export default async function ProjectDetailPage({
                   rel="noopener noreferrer"
                   className="flex h-[clamp(44px,3.6vw,52px)] items-center gap-[9px] rounded-md border-[1.5px] border-border-soft px-[22px] text-[13px] font-bold tracking-[1.2px] text-muted-soft transition-colors hover:border-ink hover:text-ink"
                 >
-                  <Github size={16} strokeWidth={1.8} />
+                  <Github size={16} strokeWidth={1.8} aria-hidden="true" />
                   {dict.caseStudy.viewGithub}
                 </a>
               )}
@@ -125,7 +125,7 @@ export default async function ProjectDetailPage({
             />
           </div>
         ) : (
-          <div className="rounded-[14px] bg-ink p-3 shadow-[0_24px_60px_rgba(11,18,32,.18)]">
+          <div className="rounded-[14px] bg-ink p-3 shadow-[0_24px_60px_rgba(11,18,32,.18)]" aria-hidden="true">
             <div className="flex h-[clamp(230px,23vw,360px)] flex-col gap-[14px] rounded-[9px] bg-gradient-to-br from-[#0b1a3a] via-[#081227] to-[#0d2247] p-[18px]">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-[7px] text-white/45">

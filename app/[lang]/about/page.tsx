@@ -49,7 +49,7 @@ export default async function AboutPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePersonSchema()) }}
       />
       <div className="flex items-center gap-3">
-        <User size={28} strokeWidth={1.7} />
+        <User size={28} strokeWidth={1.7} aria-hidden="true" />
         <h1 className="font-display text-[clamp(30px,3.6vw,52px)] font-extrabold tracking-[-0.045em]">
           {dict.aboutPage.title}
         </h1>
@@ -89,7 +89,7 @@ export default async function AboutPage({
                 className="grid grid-cols-[minmax(130px,190px)_1fr] gap-4 border-b border-border-soft py-3"
               >
                 <dt className="flex items-center gap-2 text-muted-soft">
-                  <Icon size={14} strokeWidth={1.7} />
+                  <Icon size={14} strokeWidth={1.7} aria-hidden="true" />
                   <span className="text-[13px] font-semibold">{k}</span>
                 </dt>
                 <dd className="text-[14px]">{v}</dd>
@@ -98,7 +98,7 @@ export default async function AboutPage({
           </dl>
 
           <div className="mt-[30px] flex items-center gap-[10px]">
-            <Globe size={19} strokeWidth={1.7} />
+            <Globe size={19} strokeWidth={1.7} aria-hidden="true" />
             <h2 className="font-display text-[clamp(18px,1.6vw,25px)] font-bold tracking-[-0.6px]">
               {dict.aboutPage.languagesTitle}
             </h2>

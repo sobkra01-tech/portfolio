@@ -23,7 +23,7 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
               href="#contact-form"
               className="mt-[26px] inline-flex h-[clamp(46px,3.8vw,54px)] items-center gap-[9px] rounded-md bg-signature px-6 text-[13px] font-bold tracking-[1.2px] text-white transition-colors hover:bg-signature-dark"
             >
-              <Send size={14} strokeWidth={1.8} />
+              <Send size={14} strokeWidth={1.8} aria-hidden="true" />
               {dict.contact.cta}
             </a>
           </div>
@@ -38,7 +38,7 @@ export default function Footer({ lang, dict }: { lang: Locale; dict: Dictionary 
             return (
               <a key={link.name} href={link.href} className="flex items-center gap-3">
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-signature">
-                  <Icon size={17} strokeWidth={1.7} />
+                  <Icon size={17} strokeWidth={1.7} aria-hidden="true" />
                 </span>
                 <span>
                   <span className="block text-[15px] font-semibold">{link.name}</span>

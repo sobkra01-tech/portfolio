@@ -37,7 +37,7 @@ export default function Navbar({ lang, dict }: { lang: Locale; dict: Dictionary 
                 href={localePath(lang, item.href)}
                 className="group flex items-center gap-[7px] border-b-2 border-transparent py-1 text-[14px] font-medium text-[#4a5567] transition-colors hover:text-signature"
               >
-                <Icon size={14} strokeWidth={1.7} />
+                <Icon size={14} strokeWidth={1.7} aria-hidden="true" />
                 {dict.nav[item.key]}
               </Link>
             );

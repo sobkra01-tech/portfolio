@@ -24,6 +24,7 @@ export default function ProjectThumb({
 
   return (
     <div
+      aria-hidden="true"
       className={cn(
         "relative flex items-end gap-[5px] overflow-hidden rounded-xl bg-gradient-to-br from-[#0b1a3a] via-[#081227] to-[#0d2247] p-4",
         className

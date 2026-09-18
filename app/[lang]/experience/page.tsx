@@ -38,20 +38,21 @@ export default async function ExperiencePage({
   return (
     <div className="mx-auto max-w-shell px-[clamp(18px,3.9vw,72px)] py-[clamp(36px,4.4vw,72px)] pb-[clamp(48px,5.6vw,88px)]">
       <div className="flex items-center gap-3">
-        <Briefcase size={28} strokeWidth={1.7} />
+        <Briefcase size={28} strokeWidth={1.7} aria-hidden="true" />
         <h1 className="font-display text-[clamp(30px,3.6vw,52px)] font-extrabold tracking-[-0.045em]">
           {dict.experience.title}
         </h1>
       </div>
 
       <div className="mt-[clamp(26px,3.2vw,46px)] flex flex-col">
+        <h2 className="sr-only">{dict.experience.timelineTitle}</h2>
         {experience.map((item, i) => (
           <TimelineItem
             key={item.org}
             isLast={i === experience.length - 1}
             eyebrow={
               <span className="flex items-center gap-[7px]">
-                <Calendar size={13} strokeWidth={1.8} />
+                <Calendar size={13} strokeWidth={1.8} aria-hidden="true" />
                 {item.period[lang]}
               </span>
             }
@@ -61,7 +62,7 @@ export default async function ExperiencePage({
               {item.logo ? (
                 <Image src={item.logo} alt={item.org} width={16} height={16} className="rounded-[3px]" />
               ) : (
-                <Building2 size={13} strokeWidth={1.8} />
+                <Building2 size={13} strokeWidth={1.8} aria-hidden="true" />
               )}
               <span className="text-[14px] font-semibold tracking-[.6px]">
                 {item.link ? (
@@ -74,7 +75,7 @@ export default async function ExperiencePage({
               </span>
               {item.location && (
                 <span className="flex items-center gap-1 text-[13px] font-normal text-muted-soft">
-                  <MapPin size={12} strokeWidth={1.8} />
+                  <MapPin size={12} strokeWidth={1.8} aria-hidden="true" />
                   {item.location}
                 </span>
               )}
@@ -118,7 +119,7 @@ export default async function ExperiencePage({
       <div className="mt-[clamp(18px,2.6vw,34px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] gap-[clamp(28px,3.4vw,52px)]">
         <div>
           <div className="flex items-center gap-[10px]">
-            <GraduationCap size={24} strokeWidth={1.7} />
+            <GraduationCap size={24} strokeWidth={1.7} aria-hidden="true" />
             <h2 className="font-display text-[clamp(20px,1.8vw,28px)] font-bold tracking-[-0.7px]">
               {dict.experience.educationTitle}
             </h2>
@@ -139,7 +140,7 @@ export default async function ExperiencePage({
         </div>
         <div>
           <div className="flex items-center gap-[10px]">
-            <Award size={24} strokeWidth={1.7} />
+            <Award size={24} strokeWidth={1.7} aria-hidden="true" />
             <h2 className="font-display text-[clamp(20px,1.8vw,28px)] font-bold tracking-[-0.7px]">
               {dict.experience.certificationTitle}
             </h2>
@@ -185,7 +186,7 @@ export default async function ExperiencePage({
 
       <div className="mt-[clamp(34px,4.2vw,64px)]">
         <div className="flex items-center gap-[10px]">
-          <Zap size={24} strokeWidth={1.7} />
+          <Zap size={24} strokeWidth={1.7} aria-hidden="true" />
           <h2 className="font-display text-[clamp(20px,1.8vw,28px)] font-bold tracking-[-0.7px]">
             {dict.experience.skillsTitle}
           </h2>

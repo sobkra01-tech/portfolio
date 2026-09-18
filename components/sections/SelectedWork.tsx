@@ -23,7 +23,7 @@ export default function SelectedWork({ lang, dict }: { lang: Locale; dict: Dicti
             href={localePath(lang, "/projects")}
             className="mt-5 inline-flex items-center gap-2 text-[15px] font-semibold text-signature"
           >
-            {dict.work.viewAll} <ArrowRight size={14} strokeWidth={1.9} />
+            {dict.work.viewAll} <ArrowRight size={14} strokeWidth={1.9} aria-hidden="true" />
           </Link>
         </Reveal>
 

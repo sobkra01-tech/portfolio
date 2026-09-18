@@ -23,7 +23,7 @@ export default function StatsBar({ dict }: { dict: Dictionary }) {
         {stats.map(({ value, label, icon: Icon }) => (
           <div key={label} className="flex items-center gap-[clamp(11px,1.1vw,18px)]">
             <IconBadge size={44}>
-              <Icon size={20} strokeWidth={1.6} />
+              <Icon size={20} strokeWidth={1.6} aria-hidden="true" />
             </IconBadge>
             <div>
               <div className="font-display text-[clamp(22px,2.1vw,32px)] font-extrabold tracking-[-0.9px]">

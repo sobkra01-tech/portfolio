@@ -38,7 +38,7 @@ export default async function SmartDataPage({
       <section className="bg-anthracite text-white">
         <div className="mx-auto max-w-shell px-[clamp(18px,3.9vw,72px)] py-[clamp(48px,5.6vw,88px)]">
           <div className="flex items-center gap-2 text-[13px] font-semibold tracking-[1.6px] text-signature-light">
-            <Sparkles size={14} strokeWidth={1.8} />
+            <Sparkles size={14} strokeWidth={1.8} aria-hidden="true" />
             {dict.smartdata.kicker}
           </div>
           <h1 className="mt-4 max-w-[24ch] text-pretty font-display text-[clamp(32px,4vw,56px)] font-bold leading-[1.08] tracking-[-0.04em]">
@@ -65,7 +65,7 @@ export default async function SmartDataPage({
               <Reveal key={service.title.en} delay={i * 0.06}>
                 <div className="h-full rounded-[14px] border border-border p-[clamp(18px,1.8vw,26px)]">
                   <IconBadge>
-                    <Icon size={19} strokeWidth={1.7} />
+                    <Icon size={19} strokeWidth={1.7} aria-hidden="true" />
                   </IconBadge>
                   <h3 className="mt-4 font-display text-[15px] font-bold tracking-[-0.2px]">
                     {service.title[lang]}
@@ -97,7 +97,7 @@ export default async function SmartDataPage({
             href={localePath(lang, "/contact")}
             className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-signature"
           >
-            {dict.smartdata.cta} <ArrowRight size={14} strokeWidth={1.9} />
+            {dict.smartdata.cta} <ArrowRight size={14} strokeWidth={1.9} aria-hidden="true" />
           </Link>
         </div>
       </section>

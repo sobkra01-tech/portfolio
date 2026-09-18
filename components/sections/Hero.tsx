@@ -43,27 +43,33 @@ export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary })
             ))}
           </div>
           <div className="mt-[clamp(22px,2.6vw,42px)] flex flex-wrap gap-[clamp(10px,1.1vw,18px)]">
-            <LinkButton href={`${localePath(lang, "/projects")}`} icon={<LayoutGrid size={15} strokeWidth={1.8} />}>
+            <LinkButton
+              href={`${localePath(lang, "/projects")}`}
+              icon={<LayoutGrid size={15} strokeWidth={1.8} aria-hidden="true" />}
+            >
               {dict.hero.ctaWork}
             </LinkButton>
             <LinkButton
               href={`${localePath(lang, "/contact")}`}
               variant="secondary"
-              icon={<Mail size={15} strokeWidth={1.8} />}
+              icon={<Mail size={15} strokeWidth={1.8} aria-hidden="true" />}
             >
               {dict.hero.ctaContact}
             </LinkButton>
           </div>
           <a
             href="#about"
-            aria-label={dict.common.backToTop}
+            aria-label={dict.hero.scrollDown}
             className="mt-[clamp(30px,3.6vw,58px)] flex h-[clamp(38px,3.2vw,46px)] w-[clamp(38px,3.2vw,46px)] items-center justify-center rounded-full border-[1.5px] border-border text-muted-soft transition-colors hover:border-signature hover:text-signature"
           >
-            <ArrowDown size={18} />
+            <ArrowDown size={18} aria-hidden="true" />
           </a>
         </div>
 
-        <div className="pointer-events-none absolute right-[16%] top-[8%] hidden w-[clamp(96px,10vw,168px)] rounded-[10px] bg-white p-[clamp(9px,.9vw,15px)] shadow-[0_16px_36px_rgba(11,18,32,.10)] min-[900px]:block">
+        <div
+          className="pointer-events-none absolute right-[16%] top-[8%] hidden w-[clamp(96px,10vw,168px)] rounded-[10px] bg-white p-[clamp(9px,.9vw,15px)] shadow-[0_16px_36px_rgba(11,18,32,.10)] min-[900px]:block"
+          aria-hidden="true"
+        >
           <div className="flex items-center gap-[5px] text-muted-soft">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9">
               <path d="M4 20V10M10 20V4M16 20v-7M2 20h20" />
@@ -81,7 +87,10 @@ export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary })
           </div>
         </div>
 
-        <div className="pointer-events-none absolute right-[2.5%] top-1/2 hidden h-[clamp(92px,9.4vw,158px)] w-[clamp(92px,9.4vw,158px)] items-center justify-center rounded-[10px] bg-white shadow-[0_16px_36px_rgba(11,18,32,.10)] min-[900px]:flex">
+        <div
+          className="pointer-events-none absolute right-[2.5%] top-1/2 hidden h-[clamp(92px,9.4vw,158px)] w-[clamp(92px,9.4vw,158px)] items-center justify-center rounded-[10px] bg-white shadow-[0_16px_36px_rgba(11,18,32,.10)] min-[900px]:flex"
+          aria-hidden="true"
+        >
           <div className="flex h-[62%] w-[62%] items-center justify-center rounded-full bg-[conic-gradient(#2158ff_0turn_.6turn,#e8edf9_.6turn_1turn)]">
             <div className="flex h-[70%] w-[70%] items-center justify-center rounded-full bg-white text-[clamp(8px,.78vw,12px)] font-semibold text-muted-soft">
               60%
@@ -89,7 +98,10 @@ export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary })
           </div>
         </div>
 
-        <div className="pointer-events-none absolute bottom-[6%] right-[9%] hidden w-[clamp(104px,11vw,182px)] rounded-[10px] bg-white p-[clamp(9px,.9vw,15px)] shadow-[0_16px_36px_rgba(11,18,32,.10)] min-[900px]:block">
+        <div
+          className="pointer-events-none absolute bottom-[6%] right-[9%] hidden w-[clamp(104px,11vw,182px)] rounded-[10px] bg-white p-[clamp(9px,.9vw,15px)] shadow-[0_16px_36px_rgba(11,18,32,.10)] min-[900px]:block"
+          aria-hidden="true"
+        >
           <div className="flex items-center gap-[5px] text-muted-soft">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9">
               <path d="m22 7-8.5 8.5-5-5L2 17M16 7h6v6" />

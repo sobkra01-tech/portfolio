@@ -18,7 +18,7 @@ export default function PortraitPlaceholder({
         className
       )}
     >
-      <User size={48} strokeWidth={1.4} />
+      <User size={48} strokeWidth={1.4} aria-hidden="true" />
       <span className="text-[13px] font-medium">{dict.aboutPage.portraitPlaceholder}</span>
     </div>
   );

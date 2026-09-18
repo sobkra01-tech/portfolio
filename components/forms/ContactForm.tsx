@@ -55,7 +55,7 @@ export default function ContactForm({ dict }: { dict: Dictionary }) {
         type="submit"
         className="mt-1 flex h-[52px] items-center justify-center gap-[9px] rounded-lg bg-signature text-[13px] font-bold tracking-[1.2px] text-white transition-colors hover:bg-signature-dark"
       >
-        <Send size={14} strokeWidth={1.8} />
+        <Send size={14} strokeWidth={1.8} aria-hidden="true" />
         {sent ? dict.contact.form.sent : dict.contact.form.send}
       </button>
     </form>

@@ -3,7 +3,8 @@ import type { Locale } from "@/types";
 import { profile } from "@/data/profile";
 
 export const siteUrl = "https://kra-modeste.vercel.app";
-export const defaultOgImage = "/images/portrait.jpg";
+/** Dynamically generated (app/opengraph-image.tsx) — real name/title text, correct 1200x630 social-share size. */
+export const defaultOgImage = "/opengraph-image";
 
 /** Absolute URL for a given locale + path (e.g. "", "/about", "/projects/foo"). */
 export function absoluteUrl(lang: Locale, path = ""): string {
@@ -35,6 +36,7 @@ export function buildPageMetadata({
 }): Metadata {
   const url = absoluteUrl(lang, path);
   const ogImage = `${siteUrl}${image}`;
+  const isDefaultImage = image === defaultOgImage;
 
   return {
     ...(title ? { title } : {}),
@@ -53,7 +55,7 @@ export function buildPageMetadata({
       siteName: profile.name,
       locale: lang === "fr" ? "fr_FR" : "en_US",
       type: "website",
-      images: [{ url: ogImage }]
+      images: [isDefaultImage ? { url: ogImage, width: 1200, height: 630 } : { url: ogImage }]
     }
   };
 }

@@ -41,7 +41,7 @@ export default function CaseStudyTabs({
         <div className="mt-[clamp(26px,3.2vw,46px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-[clamp(28px,4vw,60px)]">
           <div>
             <div className="flex items-center gap-[10px]">
-              <AlertTriangle size={19} strokeWidth={1.7} className="text-ink" />
+              <AlertTriangle size={19} strokeWidth={1.7} className="text-ink" aria-hidden="true" />
               <h2 className="font-display text-[clamp(17px,1.5vw,22px)] font-bold tracking-[-0.5px]">
                 {dict.caseStudy.challenge}
               </h2>
@@ -50,7 +50,7 @@ export default function CaseStudyTabs({
               {project.challenge[lang]}
             </p>
             <div className="mt-[30px] flex items-center gap-[10px]">
-              <Lightbulb size={19} strokeWidth={1.7} className="text-ink" />
+              <Lightbulb size={19} strokeWidth={1.7} className="text-ink" aria-hidden="true" />
               <h2 className="font-display text-[clamp(17px,1.5vw,22px)] font-bold tracking-[-0.5px]">
                 {dict.caseStudy.solution}
               </h2>
@@ -61,7 +61,7 @@ export default function CaseStudyTabs({
           </div>
           <div className="rounded-[14px] border border-border p-[clamp(18px,1.8vw,28px)]">
             <div className="flex items-center gap-[9px]">
-              <Target size={17} strokeWidth={1.7} className="text-ink" />
+              <Target size={17} strokeWidth={1.7} className="text-ink" aria-hidden="true" />
               <h2 className="font-display text-[clamp(15px,1.3vw,19px)] font-bold tracking-[-0.3px]">
                 {dict.caseStudy.keyResults}
               </h2>
