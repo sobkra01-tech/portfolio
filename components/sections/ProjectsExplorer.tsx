@@ -5,10 +5,10 @@ import { Search } from "lucide-react";
 import type { Locale, Project } from "@/types";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import { cn } from "@/lib/utils";
+import { categoryLabels } from "@/data/projects";
+import { getProjectStats } from "@/lib/project-stats";
 import ProjectCard from "@/components/cards/ProjectCard";
 import Reveal from "@/components/ui/Reveal";
-
-const categories = ["All", "Data Science", "Data Engineering", "Big Data", "BI", "Automation", "Research"] as const;
 
 export default function ProjectsExplorer({
   projects,
@@ -19,8 +19,13 @@ export default function ProjectsExplorer({
   lang: Locale;
   dict: Dictionary;
 }) {
-  const [filter, setFilter] = useState<(typeof categories)[number]>("All");
+  const [filter, setFilter] = useState<Project["category"] | "All">("All");
   const [query, setQuery] = useState("");
+
+  const categories = useMemo(
+    () => ["All", ...getProjectStats(projects).categories] as const,
+    [projects]
+  );
 
   const visible = useMemo(() => {
     return projects.filter((p) => {
@@ -33,7 +38,7 @@ export default function ProjectsExplorer({
   return (
     <div>
       <div className="flex flex-wrap items-center gap-[10px]">
-        {categories.map((cat, i) => (
+        {categories.map((cat) => (
           <button
             key={cat}
             type="button"
@@ -45,7 +50,7 @@ export default function ProjectsExplorer({
                 : "border-border bg-white text-muted hover:border-signature-light"
             )}
           >
-            {dict.work.filters[i].toUpperCase()}
+            {(cat === "All" ? dict.work.filterAll : categoryLabels[cat][lang]).toUpperCase()}
           </button>
         ))}
         <div className="ml-auto flex h-10 min-w-[210px] flex-1 items-center gap-[9px] rounded-lg border border-border px-[14px] text-muted-soft sm:flex-none">

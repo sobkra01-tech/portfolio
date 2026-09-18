@@ -1,4 +1,18 @@
-import type { Project } from "@/types";
+import type { LocalizedText, Project } from "@/types";
+
+/**
+ * Bilingual label for every valid Project["category"]. Keyed by value (not
+ * array position) so it can never drift out of sync with the categories
+ * actually used in `projects` below.
+ */
+export const categoryLabels: Record<Project["category"], LocalizedText> = {
+  "Data Science": { en: "Data Science", fr: "Data Science" },
+  "Data Engineering": { en: "Data Engineering", fr: "Data Engineering" },
+  "Big Data": { en: "Big Data", fr: "Big Data" },
+  BI: { en: "BI", fr: "BI" },
+  Automation: { en: "Automation", fr: "Automatisation" },
+  Research: { en: "Research", fr: "Recherche" }
+};
 
 export const projects: Project[] = [
   {

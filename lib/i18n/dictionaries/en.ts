@@ -58,7 +58,7 @@ const en = {
     allBody: "Explore a collection of projects across data science, engineering, analytics and automation.",
     searchPlaceholder: "Search projects...",
     empty: "No projects match this filter yet.",
-    filters: ["All", "Data Science", "Data Engineering", "Big Data", "BI", "Automation", "Research"]
+    filterAll: "All"
   },
   process: {
     title: "From",

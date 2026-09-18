@@ -58,7 +58,7 @@ const fr = {
     allBody: "Explorez une collection de projets en data science, ingénierie, analytics et automatisation.",
     searchPlaceholder: "Rechercher un projet...",
     empty: "Aucun projet ne correspond à ce filtre pour le moment.",
-    filters: ["Tous", "Data Science", "Data Engineering", "Big Data", "BI", "Automatisation", "Recherche"]
+    filterAll: "Tous"
   },
   process: {
     title: "De la",
