@@ -62,6 +62,7 @@ export default async function AboutPage({
               src={profile.photo}
               alt={profile.name}
               fill
+              priority
               className="object-cover"
               sizes="(min-width: 640px) 460px, 100vw"
             />

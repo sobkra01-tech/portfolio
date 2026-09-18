@@ -5,15 +5,34 @@ import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import { localePath } from "@/lib/utils";
 import { LinkButton } from "@/components/ui/Button";
 
+const heroFiberDeviceSizes = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
+const heroFiberSrcSet = heroFiberDeviceSizes
+  .map((w) => `/_next/image?url=%2Fimages%2Fhero-fibers.png&w=${w}&q=75 ${w}w`)
+  .join(", ");
+
 export default function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#fdfdff] to-[#eef1f9]">
+      {/*
+        Manual responsive preload: the fibers image is hidden below the `sm`
+        breakpoint (640px) and lazy by default, so mobile never fetches it.
+        This preload keeps the previous eager-LCP behavior on desktop/tablet,
+        where the image is visible and is the page's LCP element, without
+        Next's `priority` (which has no media condition and would force the
+        fetch on mobile too, despite the image being hidden there).
+      */}
+      <link
+        rel="preload"
+        as="image"
+        imageSrcSet={heroFiberSrcSet}
+        imageSizes="60vw"
+        media="(min-width: 640px)"
+      />
       <div className="pointer-events-none absolute inset-y-0 left-[22%] right-[-3%] hidden sm:block">
         <Image
           src="/images/hero-fibers.png"
           alt=""
           fill
-          priority
           sizes="60vw"
           className="object-cover object-right"
         />
