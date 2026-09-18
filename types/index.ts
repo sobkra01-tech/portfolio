@@ -25,6 +25,8 @@ export interface Project {
   bars: string[];
   stack: string[];
   featured: boolean;
+  /** Must reflect an actually-delivered dashboard — never inferred from category. */
+  hasDashboard: boolean;
   title: LocalizedText;
   kicker: LocalizedText;
   tagline: LocalizedText;

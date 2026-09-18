@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { Database, Settings, ScatterChart, Brain, Workflow, Target, ArrowRight, Search, FlaskConical, GraduationCap, ClipboardList, Sparkles } from "lucide-react";
+import { Database, Settings, ScatterChart, Brain, Workflow, Target, ArrowRight, Sparkles } from "lucide-react";
 import type { Locale } from "@/types";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import { localePath } from "@/lib/utils";
+import { smartDataServices } from "@/data/smartdata";
+import { smartDataIcons } from "@/lib/smartdata-icons";
 import IconBadge from "@/components/cards/IconBadge";
 import Reveal from "@/components/ui/Reveal";
 
 const stepIcons = [Database, Settings, ScatterChart, Brain, Workflow, Target];
-const serviceIcons = [Search, FlaskConical, GraduationCap, ClipboardList];
 
 export default function DataToDecision({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   return (
@@ -45,16 +46,16 @@ export default function DataToDecision({ lang, dict }: { lang: Locale; dict: Dic
         </p>
 
         <div className="mt-[clamp(28px,3.4vw,48px)] grid grid-cols-[repeat(auto-fit,minmax(min(100%,230px),1fr))] gap-[clamp(12px,1.2vw,20px)]">
-          {dict.process.services.map((service, i) => {
-            const Icon = serviceIcons[i];
+          {smartDataServices.map((service, i) => {
+            const Icon = smartDataIcons[service.icon];
             return (
-              <Reveal key={service.title} delay={i * 0.06}>
+              <Reveal key={service.title.en} delay={i * 0.06}>
                 <div className="h-full rounded-[14px] border border-white/12 bg-white/[.03] p-[clamp(18px,1.8vw,28px)] text-center">
                   <IconBadge dark size={46} className="mx-auto">
                     <Icon size={19} strokeWidth={1.7} />
                   </IconBadge>
-                  <div className="mt-4 font-display text-[15px] font-bold">{service.title}</div>
-                  <p className="mt-[10px] text-[13px] leading-[1.6] text-white/62">{service.desc}</p>
+                  <div className="mt-4 font-display text-[15px] font-bold">{service.title[lang]}</div>
+                  <p className="mt-[10px] text-[13px] leading-[1.6] text-white/62">{service.desc[lang]}</p>
                 </div>
               </Reveal>
             );

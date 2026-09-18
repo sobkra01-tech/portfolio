@@ -73,12 +73,6 @@ const en = {
       { title: "DECISION", desc: "Make Smart Choices" },
       { title: "IMPACT", desc: "Create Value" }
     ],
-    services: [
-      { title: "Market Research", desc: "Studies and market analysis to support strategic decisions." },
-      { title: "Scientific Data Analysis", desc: "Supporting researchers with data analysis and scientific writing." },
-      { title: "Data Training", desc: "Training on data analysis tools for individuals and organizations." },
-      { title: "Data Collection", desc: "Training and support on data collection tools and methods." }
-    ],
     smartdataNote: "SmartData Consulting is currently being built.",
     learnMore: "Learn more soon"
   },

@@ -3,6 +3,8 @@ import type { Project } from "@/types";
 export interface ProjectStats {
   total: number;
   categories: Project["category"][];
+  /** Count of projects that explicitly set hasDashboard: true — never inferred from category. */
+  dashboardsBuilt: number;
 }
 
 /**
@@ -13,6 +15,7 @@ export interface ProjectStats {
 export function getProjectStats(projects: Project[]): ProjectStats {
   return {
     total: projects.length,
-    categories: Array.from(new Set(projects.map((p) => p.category)))
+    categories: Array.from(new Set(projects.map((p) => p.category))),
+    dashboardsBuilt: projects.filter((p) => p.hasDashboard).length
   };
 }

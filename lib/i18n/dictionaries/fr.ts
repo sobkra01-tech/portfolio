@@ -73,12 +73,6 @@ const fr = {
       { title: "DÉCISION", desc: "Décider avec justesse" },
       { title: "IMPACT", desc: "Créer de la valeur" }
     ],
-    services: [
-      { title: "Études de marché", desc: "Études et analyses de marché pour accompagner les décisions stratégiques." },
-      { title: "Analyse de données scientifiques", desc: "Accompagnement des chercheurs dans l'analyse de données et la rédaction scientifique." },
-      { title: "Formation en analyse de données", desc: "Formation aux outils d'analyse de données pour particuliers et organisations." },
-      { title: "Collecte de données", desc: "Formation et accompagnement aux outils et méthodes de collecte de données." }
-    ],
     smartdataNote: "SmartData Consulting est actuellement en construction.",
     learnMore: "Bientôt disponible"
   },

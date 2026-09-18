@@ -5,12 +5,12 @@ import { getProjectStats } from "@/lib/project-stats";
 import IconBadge from "@/components/cards/IconBadge";
 
 export default function StatsBar({ dict }: { dict: Dictionary }) {
-  const { total: projectsCompleted } = getProjectStats(projects);
+  const { total: projectsCompleted, dashboardsBuilt } = getProjectStats(projects);
 
   const stats = [
     { value: "3+", label: dict.stats.years, icon: Settings },
     { value: `${projectsCompleted}`, label: dict.stats.projects, icon: TrendingUp },
-    { value: "10+", label: dict.stats.dashboards, icon: Grid3x3 },
+    { value: `${dashboardsBuilt}`, label: dict.stats.dashboards, icon: Grid3x3 },
     { value: "100%", label: dict.stats.commitment, icon: CheckCircle2 }
   ];
 

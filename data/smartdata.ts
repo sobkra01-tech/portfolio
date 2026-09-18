@@ -1,12 +1,23 @@
 import type { LocalizedText } from "@/types";
 
 export interface SmartDataService {
+  /** Key into lib/smartdata-icons.ts's smartDataIcons lookup. */
+  icon: string;
   title: LocalizedText;
   desc: LocalizedText;
 }
 
 export const smartDataServices: SmartDataService[] = [
   {
+    icon: "trending-up",
+    title: { en: "Market Research", fr: "Études de marché" },
+    desc: {
+      en: "Studies and market analysis to support strategic decisions.",
+      fr: "Études et analyses de marché pour accompagner les décisions stratégiques."
+    }
+  },
+  {
+    icon: "search",
     title: {
       en: "Data Analysis & Interpretation",
       fr: "Analyse et interprétation des données"
@@ -17,6 +28,7 @@ export const smartDataServices: SmartDataService[] = [
     }
   },
   {
+    icon: "flask-conical",
     title: {
       en: "Scientific Writing Support",
       fr: "Accompagnement à la rédaction scientifique"
@@ -27,6 +39,7 @@ export const smartDataServices: SmartDataService[] = [
     }
   },
   {
+    icon: "graduation-cap",
     title: {
       en: "Data Analysis Training",
       fr: "Formation en analyse de données"
@@ -37,6 +50,7 @@ export const smartDataServices: SmartDataService[] = [
     }
   },
   {
+    icon: "clipboard-list",
     title: {
       en: "Data Collection Training",
       fr: "Formation à la collecte de données"

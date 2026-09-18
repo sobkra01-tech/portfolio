@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Sparkles, Search, FlaskConical, GraduationCap, ClipboardList, ArrowRight } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 import { resolveLangParam } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { localePath } from "@/lib/utils";
 import { smartDataServices, smartDataApproach } from "@/data/smartdata";
+import { smartDataIcons } from "@/lib/smartdata-icons";
 import IconBadge from "@/components/cards/IconBadge";
 import Reveal from "@/components/ui/Reveal";
-
-const serviceIcons = [Search, FlaskConical, GraduationCap, ClipboardList];
 
 export async function generateMetadata({
   params
@@ -55,7 +54,7 @@ export default async function SmartDataPage({
         </h2>
         <div className="mt-6 grid gap-[clamp(16px,1.8vw,28px)] sm:grid-cols-2">
           {smartDataServices.map((service, i) => {
-            const Icon = serviceIcons[i];
+            const Icon = smartDataIcons[service.icon];
             return (
               <Reveal key={service.title.en} delay={i * 0.06}>
                 <div className="h-full rounded-[14px] border border-border p-[clamp(18px,1.8vw,26px)]">
