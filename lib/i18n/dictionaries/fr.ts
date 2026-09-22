@@ -123,7 +123,9 @@ const fr = {
       subject: "Sujet",
       message: "Votre message",
       send: "Envoyer le message",
-      sent: "Message envoyé"
+      sending: "Envoi en cours...",
+      sent: "Message envoyé",
+      error: "Une erreur est survenue. Veuillez réessayer."
     },
     linksTitle: "Ailleurs"
   },

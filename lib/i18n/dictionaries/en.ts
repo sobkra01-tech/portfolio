@@ -123,7 +123,9 @@ const en = {
       subject: "Subject",
       message: "Your Message",
       send: "Send Message",
-      sent: "Message Sent"
+      sending: "Sending...",
+      sent: "Message Sent",
+      error: "Something went wrong. Please try again."
     },
     linksTitle: "Elsewhere"
   },
