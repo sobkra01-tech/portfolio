@@ -150,21 +150,33 @@ export default async function ExperiencePage({
               const content = (
                 <>
                   <div>
-                    <div className="font-display text-[clamp(15px,1.3vw,19px)] font-bold tracking-[-0.3px]">
-                      {cert.name}
+                    <div className="flex flex-wrap items-center gap-[9px]">
+                      <div className="font-display text-[clamp(15px,1.3vw,19px)] font-bold tracking-[-0.3px]">
+                        {cert.title[lang]}
+                      </div>
+                      {cert.status === "in-progress" && (
+                        <span className="rounded-full border border-signature/30 px-[9px] py-[2px] text-[11px] font-semibold tracking-[0.4px] text-signature">
+                          {dict.experience.certificationInProgress}
+                        </span>
+                      )}
                     </div>
                     <div className="mt-2 text-[13.5px] text-signature">{cert.issuer}</div>
-                    <div className="mt-1 text-[13.5px] text-muted-soft">{cert.year}</div>
+                    {cert.year && <div className="mt-1 text-[13.5px] text-muted-soft">{cert.year}</div>}
+                    {cert.expirationDate && (
+                      <div className="mt-1 text-[13.5px] text-muted-soft">
+                        {dict.experience.certificationExpires} {cert.expirationDate}
+                      </div>
+                    )}
                   </div>
                   {cert.image && (
                     <Image src={cert.image} alt={cert.issuer} width={28} height={28} className="rounded-[5px]" />
                   )}
                 </>
               );
-              return cert.url ? (
+              return cert.credentialUrl ? (
                 <a
-                  key={cert.name}
-                  href={cert.url}
+                  key={cert.id}
+                  href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-wrap items-center justify-between gap-5 rounded-[14px] border border-border p-[clamp(18px,1.8vw,26px)] transition-colors hover:border-[#c9d6ff]"
@@ -173,7 +185,7 @@ export default async function ExperiencePage({
                 </a>
               ) : (
                 <div
-                  key={cert.name}
+                  key={cert.id}
                   className="flex flex-wrap items-center justify-between gap-5 rounded-[14px] border border-border p-[clamp(18px,1.8vw,26px)]"
                 >
                   {content}

@@ -64,11 +64,19 @@ export interface EducationItem {
   description?: LocalizedText;
 }
 
+export type CertificationStatus = "completed" | "in-progress";
+
 export interface Certification {
-  name: string;
+  id: string;
+  title: LocalizedText;
   issuer: string;
-  year: string;
-  url?: string;
+  status: CertificationStatus;
+  /** Year or free-form date, when known — e.g. "2024" or a start year for an in-progress certification. */
+  year?: string;
+  /** Only set when a real credential/verification URL exists. */
+  credentialUrl?: string;
+  /** Only set when the certification actually has an expiration date. */
+  expirationDate?: string;
   /** Path under public/, e.g. "/images/logos/datacamp.png" */
   image?: string;
 }

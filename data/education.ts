@@ -4,7 +4,7 @@ export const education: EducationItem[] = [
   {
     period: "2020 — 2023",
     title: { en: "Master's Degree, Big Data", fr: "Master Big Data" },
-    school: "Université Internationale des Sciences et Technologies (UIST)"
+    school: "Université Internationale des Sciences et Technologie (UIST)"
   },
   {
     period: "2020 — 2023",
@@ -12,6 +12,6 @@ export const education: EducationItem[] = [
       en: "Bachelor's Degree, Statistics & Applied Economics",
       fr: "Licence Statistique et Économie Appliquée"
     },
-    school: "Université Internationale des Sciences et Technologies (UIST)"
+    school: "Université Internationale des Sciences et Technologie (UIST)"
   }
 ];

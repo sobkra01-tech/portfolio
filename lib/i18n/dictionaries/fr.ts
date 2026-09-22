@@ -95,6 +95,8 @@ const fr = {
       "Expérience professionnelle de Kouakou Kra Modeste en ingénierie des données, analytics et business intelligence, avec des missions chez SOBERY SARL, Africa Data Intelligence et KAN Group.",
     educationTitle: "Formation",
     certificationTitle: "Certification",
+    certificationInProgress: "En cours",
+    certificationExpires: "Expire",
     skillsTitle: "Compétences techniques"
   },
   aboutPage: {
