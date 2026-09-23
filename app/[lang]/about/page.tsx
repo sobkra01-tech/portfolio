@@ -63,7 +63,7 @@ export default async function AboutPage({
               alt={profile.name}
               fill
               priority
-              className="object-cover"
+              className="object-cover object-[center_12%]"
               sizes="(min-width: 640px) 460px, 100vw"
             />
           </div>

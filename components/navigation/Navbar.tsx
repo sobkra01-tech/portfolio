@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Layers, Sparkles, Briefcase, User, Mail } from "lucide-react";
 import type { Locale } from "@/types";
 import type { Dictionary } from "@/lib/i18n/get-dictionary";
 import { navLinks } from "@/data/nav";
-import { localePath } from "@/lib/utils";
+import { localePath, cn } from "@/lib/utils";
 import LanguageSwitcher from "@/components/navigation/LanguageSwitcher";
 
 const icons = {
@@ -15,6 +18,9 @@ const icons = {
 };
 
 export default function Navbar({ lang, dict }: { lang: Locale; dict: Dictionary }) {
+  const pathname = usePathname() || "/";
+  const current = pathname.replace(`/${lang}`, "") || "/";
+
   return (
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-[clamp(64px,5.2vw,82px)] max-w-shell items-center justify-between gap-6 px-[clamp(18px,3.9vw,72px)]">
@@ -31,11 +37,21 @@ export default function Navbar({ lang, dict }: { lang: Locale; dict: Dictionary 
         <nav className="hidden items-center gap-[clamp(16px,2.4vw,40px)] md:flex" aria-label={dict.common.primaryNav}>
           {navLinks.map((item) => {
             const Icon = icons[item.key];
+            // "/" (Expertise) also covers /smartdata: it has no dedicated nav
+            // entry of its own and is only reached from the Home page.
+            const active =
+              item.href === "/"
+                ? current === "/" || current.startsWith("/smartdata")
+                : current.startsWith(item.href);
             return (
               <Link
                 key={item.key}
                 href={localePath(lang, item.href)}
-                className="group flex items-center gap-[7px] border-b-2 border-transparent py-1 text-[14px] font-medium text-[#4a5567] transition-colors hover:text-signature"
+                aria-current={active ? "page" : undefined}
+                className={cn(
+                  "group flex items-center gap-[7px] border-b-2 border-transparent py-1 text-[14px] font-medium transition-colors",
+                  active ? "text-signature" : "text-[#4a5567] hover:text-signature"
+                )}
               >
                 <Icon size={14} strokeWidth={1.7} aria-hidden="true" />
                 {dict.nav[item.key]}
