@@ -130,7 +130,7 @@ export default async function ExperiencePage({
                 key={item.title[lang]}
                 isLast={i === education.length - 1}
                 compact
-                eyebrow={item.period}
+                eyebrow={item.period[lang]}
                 title={item.title[lang]}
               >
                 <p className="mt-[6px] max-w-[40ch] text-[13px] leading-[1.55] text-muted">{item.school}</p>

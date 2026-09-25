@@ -58,7 +58,7 @@ export interface ExperienceItem {
 }
 
 export interface EducationItem {
-  period: string;
+  period: LocalizedText;
   title: LocalizedText;
   school: string;
   description?: LocalizedText;
